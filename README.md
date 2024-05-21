@@ -2,7 +2,6 @@
 ### 🚀 Passionate Developer | 🌐 Open Source Enthusiast | 🎓 Lifelong Learner 
 [![trophy](https://github-profile-trophy.vercel.app/?username=mnichols08&theme=onedark)](https://github.com/ryo-ma/github-profile-trophy)
 # On a Mission to Kick Down The Door into Tech
----
 
 ## About Me
 
