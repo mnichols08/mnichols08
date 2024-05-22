@@ -1,0 +1,47 @@
+ ["who_am_i": [
+    {
+      "name": ["Mikey", "Nichols"],
+      "logo": "image/Logo.png",
+      "position": "Full Stack Web Developer",
+      "cv_file": "file/mnichols-cv.pdf"
+    }
+  ],
+  "blog_links": [
+    {
+      "title": "Unveiling My Experience with Chingu - Unlocking Growth Through Collaboration",
+      "date": "April 1, 2024",
+      "link": "https://journeytocode.io/unveiling-my-experience-with-chingu"
+    },
+    {
+      "title": "Git Out of Your Comfort Zone - Navigating The Daily Development Routine",
+      "date": "March 25, 2024",
+      "link": "https://journeytocode.io/git-out-of-your-comfort-zone"
+    },
+    {
+      "title": "Coding Patterns Demystified - A Deep Dive into the Model-View-Controller (MVC) Pattern",
+      "date": "March 15, 2024",
+      "link": "https://journeytocode.io/coding-patterns-demystified"
+    },
+    {
+      "title": "Journey To Code - The Epic Adventure of an Aspiring Web Developer",
+      "date": "March 10, 2024",
+      "link": "https://journeytocode.io/journey-to-code "
+    }
+  ],
+  "social_links": [
+    {
+      "Instagram": ""
+    },
+    {
+      "X": "https://twitter.com/_m_Nix_"
+    },
+    {
+      "Linkedin": "https://www.linkedin.com/in/mnix-dev/"
+    },
+    {
+      "Gmail": "mailto:mnix.dev@gmail.com"
+    },
+    {
+      "Github": "https://github.com/mnichols08"
+    }
+  ]]
