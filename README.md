@@ -15,10 +15,9 @@ I care about getting features to work but I enjoy the engineering around them to
 My pinned repositories below represent the work I'm most interested in: full-stack applications, practical tools, collaborative projects, and experiments that taught me something worth carrying into the next project.
 
 ## Elsewhere
-
-**Portfolio:** [mnix.dev](https://mnix.dev)
-**Technical writing:** [journeytocode.io](https://journeytocode.io)
-**CodePen:** [codepen.io/mnichols08](https://codepen.io/mnichols08)
+**Portfolio:** [mnix.dev](https://mnix.dev) | 
+**Technical writing:** [journeytocode.io](https://journeytocode.io) | 
+**CodePen:** [codepen.io/mnichols08](https://codepen.io/mnichols08) | 
 **LinkedIn:** [linkedin.com/in/mnix-dev](https://linkedin.com/in/mnix-dev)
 
 ### Let's build something useful.
