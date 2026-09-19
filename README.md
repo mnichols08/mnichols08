@@ -16,7 +16,7 @@ My pinned repositories below represent the work I'm most interested in: full-sta
 
 ## Elsewhere
 **Portfolio:** [mnix.dev](https://mnix.dev) | 
-**Technical writing:** [journeytocode.io](https://journeytocode.io) | 
+**Technical Writing:** [journeytocode.io](https://journeytocode.io) | 
 **CodePen:** [codepen.io/mnichols08](https://codepen.io/mnichols08) | 
 **LinkedIn:** [linkedin.com/in/mnix-dev](https://linkedin.com/in/mnix-dev)
 
