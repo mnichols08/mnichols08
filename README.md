@@ -6,8 +6,8 @@
 </a>
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=mnichols08&hide_border=true&background=111111&stroke=E3DE13&ring=E3DE13&fire=E3DE13&currStreakLabel=E3DE13&sideLabels=ffffff&sideNums=ffffff&dates=b6b211">
-    <img src="https://streak-stats.demolab.com?user=mnichols08&hide_border=true&background=F5F4E6&stroke=111111&ring=827F2B&fire=827F2B&currStreakLabel=111111&sideLabels=111111&sideNums=111111&dates=827F2B" alt="GitHub Streak" height="165">
+    <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=mnichols08&hide_border=true&background=111111&stroke=E3DE13&ring=E3DE13&fire=E3DE13&currStreakLabel=E3DE13&currStreakNum=ffffff&sideLabels=ffffff&sideNums=ffffff&dates=b6b211">
+    <img src="https://streak-stats.demolab.com?user=mnichols08&hide_border=true&background=F5F4E6&stroke=111111&ring=827F2B&fire=827F2B&currStreakLabel=111111&currStreakNum=111111&sideLabels=111111&sideNums=111111&dates=827F2B" alt="GitHub Streak" height="165">
   </picture>
 </p>
 <p align="center">
