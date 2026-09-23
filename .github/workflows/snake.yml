@@ -19,7 +19,7 @@ jobs:
       - name: Generate Animated Snake
         uses: Platane/snk@v3
         with:
-          github_user_name: ${{ github.repository_owner }}
+          github_user_name: mnichols08
           outputs: |
             dist/github-snake.svg?palette=github-light&color_snake=#111111&color_dots=#ebedf0,#f7f5b5,#efeb6a,#e3de13,#8b8500
             dist/github-snake-dark.svg?palette=github-dark&color_snake=#e3de13&color_dots=#161b22,#3e3c20,#827f2b,#b6b211,#e3de13
