@@ -1,7 +1,7 @@
 <a href="https://mnix.dev" target="_blank">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/996c59e0-4263-4815-a91b-16c353622041">
-  <img src="https://github.com/user-attachments/assets/2aa169cd-642d-4783-afde-c9206bafa2ae" alt="mnichols08 banner">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/banner-dark.png" alt="mnichols08 banner">
+  <img src="./assets/banner-light.png" alt="mnichols08 banner">
 </picture>
 </a>
 
@@ -33,5 +33,8 @@ I'm interested in full-stack, frontend, and software development opportunities w
 
 ---
 
-![snake animation](https://github.com/mnichols08/mnichols08/blob/output/github-contribution-grid-snake2.svg)
-
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="github-snake.svg" />
+  <img alt="github-snake" src="github-snake.svg" />
+</picture>
