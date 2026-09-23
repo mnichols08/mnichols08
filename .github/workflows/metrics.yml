@@ -1,0 +1,66 @@
+name: Metrics
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate main metrics
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          filename: metrics.svg
+          committer_branch: output
+          base: header, activity, community, repositories, metadata
+          config_timezone: America/New_York
+          plugin_languages: yes
+          plugin_languages_analysis_timeout: 15
+          plugin_languages_categories: markup, programming
+          plugin_languages_recent_categories: markup, programming
+          plugin_languages_details: bytes-size, percentage
+          plugin_languages_limit: 8
+          extras_css: |
+            :root {
+              --color-canvas-default: #111111 !important;
+              --color-canvas-subtle: #1a1a1a !important;
+              --color-border-default: #3e3c20 !important;
+              --color-border-muted: #2a2a2a !important;
+              --color-fg-default: #ffffff !important;
+              --color-fg-muted: #b6b211 !important;
+              --color-fg-subtle: #827f2b !important;
+              --color-accent-fg: #e3de13 !important;
+              --color-accent-emphasis: #e3de13 !important;
+              --color-success-fg: #e3de13 !important;
+              --color-attention-fg: #e3de13 !important;
+              --color-severe-fg: #e3de13 !important;
+              --color-done-fg: #e3de13 !important;
+            }
+            h2, h3, h4 { color: #e3de13 !important; }
+            body { background-color: #111111 !important; }
+
+      - name: Generate isometric commit calendar
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          filename: metrics.isocalendar.svg
+          committer_branch: output
+          base: ""
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+          extras_css: |
+            :root {
+              --color-canvas-default: #111111 !important;
+              --color-calendar-graph-day-L1-bg: #3e3c20 !important;
+              --color-calendar-graph-day-L2-bg: #827f2b !important;
+              --color-calendar-graph-day-L3-bg: #b6b211 !important;
+              --color-calendar-graph-day-L4-bg: #e3de13 !important;
+              --color-calendar-graph-day-bg: #1a1a1a !important;
+            }
+            body { background-color: #111111 !important; }
