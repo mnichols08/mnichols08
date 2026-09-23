@@ -75,19 +75,19 @@ jobs:
               --color-fg-default: #111111 !important;
               --color-fg-muted: #3a3814 !important;
               --color-fg-subtle: #55521e !important;
-              --color-accent-fg: #6b6828 !important;
-              --color-accent-emphasis: #827f2b !important;
-              --color-success-fg: #4a4720 !important;
-              --color-attention-fg: #6b6828 !important;
-              --color-severe-fg: #6b6828 !important;
-              --color-done-fg: #6b6828 !important;
+              --color-accent-fg: #111111 !important;
+              --color-accent-emphasis: #111111 !important;
+              --color-success-fg: #111111 !important;
+              --color-attention-fg: #111111 !important;
+              --color-severe-fg: #111111 !important;
+              --color-done-fg: #111111 !important;
               --color-calendar-graph-day-L1-bg: #d8d6bd !important;
               --color-calendar-graph-day-L2-bg: #b6b211 !important;
               --color-calendar-graph-day-L3-bg: #827f2b !important;
               --color-calendar-graph-day-L4-bg: #4a4720 !important;
               --color-calendar-graph-day-bg: #ebe9d4 !important;
             }
-            h2, h3, h4 { color: #6b6828 !important; }
+            h2, h3, h4 { color: #111111 !important; }
             body { background-color: #F5F4E6 !important; color: #111111 !important; }
             text, tspan { fill: #111111 !important; }
 
@@ -125,13 +125,13 @@ jobs:
           ref: output
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Hue-rotate isocalendar SVGs to yellow palette
+      - name: Recolor embedded graphics to yellow palette
         run: |
           python3 << 'PYEOF'
           import re, colorsys
 
-          # Explicit background swaps first (guarantees exact canvas tone
-          # rather than leaving it to hue-math approximation)
+          # ---- 1. Exact hex swaps for graphics that ignore extras_css entirely
+          #         (fixed/embedded markup rather than CSS-variable driven) ----
           EXPLICIT = {
               'metrics.isocalendar-dark.svg': {
                   '161b22': '1a1a1a',
@@ -139,11 +139,31 @@ jobs:
               'metrics.isocalendar.svg': {
                   'ffffff': 'f5f4e6',
               },
+              # small "contribution squares" row near the top of the header —
+              # same default GitHub green swatches as the calendar graph,
+              # mapped to the exact same palette used by the snake/isocalendar
+              'metrics-dark.svg': {
+                  '161b22': '1a1a1a',
+                  '0e4429': '3e3c20',
+                  '006d32': '827f2b',
+                  '26a641': 'b6b211',
+                  '39d353': 'e3de13',
+              },
+              'metrics.svg': {
+                  'ebedf0': 'ebe9d4',
+                  '9be9a8': 'f7f5b5',
+                  '40c463': 'efeb6a',
+                  '30a14e': 'e3de13',
+                  '216e39': '8b8500',
+              },
           }
+
+          # files that also get the broader hue-rotate pass (safe here since
+          # they have no language-bar brand colors to protect)
+          HUE_ROTATE_FILES = {'metrics.isocalendar-dark.svg', 'metrics.isocalendar.svg'}
 
           TARGET_RGB = (227/255, 222/255, 19/255)
           target_h, _, _ = colorsys.rgb_to_hls(*TARGET_RGB)
-
           hex_re = re.compile(r'#([0-9a-fA-F]{6})\b')
 
           for fname, explicit_map in EXPLICIT.items():
@@ -154,36 +174,33 @@ jobs:
                   print(f"skip missing {fname}")
                   continue
 
-              # 1. explicit exact swaps
               for old, new in explicit_map.items():
                   content = re.sub(r'(?i)#' + old, '#' + new, content)
 
-              # 2. generic hue-rotate for everything else (any real saturation
-              #    gets pulled to the yellow hue; true grays are untouched
-              #    since they have ~0 saturation to rotate)
-              colors = set(m.group(1).lower() for m in hex_re.finditer(content))
-              mapping = {}
-              for hexcode in colors:
-                  r = int(hexcode[0:2], 16) / 255
-                  g = int(hexcode[2:4], 16) / 255
-                  b = int(hexcode[4:6], 16) / 255
-                  h, l, s = colorsys.rgb_to_hls(r, g, b)
-                  if s < 0.03:
-                      continue  # true neutral, leave as-is
-                  nr, ng, nb = colorsys.hls_to_rgb(target_h, l, s)
-                  new_hex = '{:02x}{:02x}{:02x}'.format(
-                      round(nr * 255), round(ng * 255), round(nb * 255)
-                  )
-                  if new_hex != hexcode:
-                      mapping[hexcode] = new_hex
-
-              for old, new in mapping.items():
-                  content = re.sub(r'(?i)#' + old, '#' + new, content)
+              if fname in HUE_ROTATE_FILES:
+                  colors = set(m.group(1).lower() for m in hex_re.finditer(content))
+                  mapping = {}
+                  for hexcode in colors:
+                      r = int(hexcode[0:2], 16) / 255
+                      g = int(hexcode[2:4], 16) / 255
+                      b = int(hexcode[4:6], 16) / 255
+                      h, l, s = colorsys.rgb_to_hls(r, g, b)
+                      if s < 0.03:
+                          continue
+                      nr, ng, nb = colorsys.hls_to_rgb(target_h, l, s)
+                      new_hex = '{:02x}{:02x}{:02x}'.format(
+                          round(nr * 255), round(ng * 255), round(nb * 255)
+                      )
+                      if new_hex != hexcode:
+                          mapping[hexcode] = new_hex
+                  for old, new in mapping.items():
+                      content = re.sub(r'(?i)#' + old, '#' + new, content)
+                  print(f"{fname}: {len(explicit_map)} explicit + {len(mapping)} hue-rotated")
+              else:
+                  print(f"{fname}: {len(explicit_map)} explicit swaps")
 
               with open(fname, 'w', encoding='utf-8') as f:
                   f.write(content)
-
-              print(f"{fname}: {len(explicit_map)} explicit + {len(mapping)} hue-rotated")
           PYEOF
 
       - name: Commit and push recolored SVGs
@@ -192,11 +209,13 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           FILES=""
+          [ -f metrics.svg ] && FILES="$FILES metrics.svg"
+          [ -f metrics-dark.svg ] && FILES="$FILES metrics-dark.svg"
           [ -f metrics.isocalendar.svg ] && FILES="$FILES metrics.isocalendar.svg"
           [ -f metrics.isocalendar-dark.svg ] && FILES="$FILES metrics.isocalendar-dark.svg"
 
           if [ -z "$FILES" ]; then
-            echo "No isocalendar files found to commit"
+            echo "No files found to commit"
             exit 0
           fi
 
@@ -205,6 +224,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Recolor isocalendar to yellow palette"
+            git commit -m "Recolor embedded graphics to yellow palette"
             git push origin output
           fi
