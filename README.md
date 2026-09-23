@@ -28,6 +28,9 @@
   <a href="https://linkedin.com/in/mnix-dev">
     <img src="https://img.shields.io/badge/LinkedIn-mnix--dev-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
   </a>
+  <a href="https://mnix.dev/file/mnichols-cv.pdf">
+    <img src="https://img.shields.io/badge/Resume-Download-E3DE13?style=for-the-badge&logo=readdotcv&logoColor=111111" alt="Resume">
+  </a>
 </p>
 
 <p align="center">
@@ -185,11 +188,17 @@ I also spend a lot of time exploring **Web Components**, progressive web applica
 # GitHub Metrics
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/mnichols08/mnichols08/output/metrics.svg" alt="GitHub Metrics">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mnichols08/mnichols08/output/metrics-dark.svg">
+    <img src="https://raw.githubusercontent.com/mnichols08/mnichols08/output/metrics.svg" alt="GitHub Metrics">
+  </picture>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/mnichols08/mnichols08/output/metrics.isocalendar.svg" alt="Isometric Commit Calendar">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mnichols08/mnichols08/output/metrics.isocalendar-dark.svg">
+    <img src="https://raw.githubusercontent.com/mnichols08/mnichols08/output/metrics.isocalendar.svg" alt="Isometric Commit Calendar">
+  </picture>
 </p>
 
 ---
