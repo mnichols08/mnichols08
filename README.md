@@ -44,6 +44,7 @@ I also spend a lot of time exploring **Web Components**, progressive web applica
 <p>
   <img src="https://img.shields.io/badge/JavaScript-E3DE13?style=for-the-badge&logo=javascript&logoColor=111111" alt="JavaScript">
   <img src="https://img.shields.io/badge/React-111111?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
+  <img src="https://img.shields.io/badge/Next.js-111111?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js">
   <img src="https://img.shields.io/badge/Web_Components-111111?style=for-the-badge&logo=webcomponents.org&logoColor=E3DE13" alt="Web Components">
   <img src="https://img.shields.io/badge/HTML5-111111?style=for-the-badge&logo=html5&logoColor=E34F26" alt="HTML5">
   <img src="https://img.shields.io/badge/CSS3-111111?style=for-the-badge&logo=css&logoColor=1572B6" alt="CSS3">
@@ -56,15 +57,20 @@ I also spend a lot of time exploring **Web Components**, progressive web applica
   <img src="https://img.shields.io/badge/Express-111111?style=for-the-badge&logo=express&logoColor=white" alt="Express">
   <img src="https://img.shields.io/badge/REST_APIs-111111?style=for-the-badge&logo=fastapi&logoColor=E3DE13" alt="REST APIs">
   <img src="https://img.shields.io/badge/MongoDB-111111?style=for-the-badge&logo=mongodb&logoColor=47A248" alt="MongoDB">
+  <img src="https://img.shields.io/badge/PostgreSQL-111111?style=for-the-badge&logo=postgresql&logoColor=4169E1" alt="PostgreSQL">
+  <img src="https://img.shields.io/badge/Airtable-111111?style=for-the-badge&logo=airtable&logoColor=18BFFF" alt="Airtable">
 </p>
 
 ## Testing & Quality
 
 <p>
+  <img src="https://img.shields.io/badge/TypeScript-111111?style=for-the-badge&logo=typescript&logoColor=3178C6" alt="TypeScript">
   <img src="https://img.shields.io/badge/Vitest-111111?style=for-the-badge&logo=vitest&logoColor=6E9F18" alt="Vitest">
   <img src="https://img.shields.io/badge/Jest-111111?style=for-the-badge&logo=jest&logoColor=C21325" alt="Jest">
   <img src="https://img.shields.io/badge/React_Testing_Library-111111?style=for-the-badge&logo=testinglibrary&logoColor=E33332" alt="React Testing Library">
   <img src="https://img.shields.io/badge/Playwright-111111?style=for-the-badge&logo=playwright&logoColor=45BA4B" alt="Playwright">
+  <img src="https://img.shields.io/badge/ESLint-111111?style=for-the-badge&logo=eslint&logoColor=4B32C3" alt="ESLint">
+  <img src="https://img.shields.io/badge/Prettier-111111?style=for-the-badge&logo=prettier&logoColor=F7B93E" alt="Prettier">
 </p>
 
 ## Workflow & Deployment
@@ -171,8 +177,8 @@ I'm interested in **full-stack, frontend, and software development opportunities
 
 <br>
 <picture width="100%">
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mnichols08/mnichols08/output/github-contribution-grid-snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/mnichols08/mnichols08/output/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mnichols08/mnichols08/output/github-snake.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/mnichols08/mnichols08/output/github-snake-dark.svg">
   <img alt="GitHub contribution snake" src="github-snake.svg">
 </picture>
 
