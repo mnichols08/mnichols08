@@ -33,6 +33,5 @@ I'm interested in full-stack, frontend, and software development opportunities w
 
 ---
 
-![github-user-contribution](https://github.com/user-attachments/assets/bf69e152-2d66-4112-8c2b-2bd9559483e3)
-
+![snake animation](https://github.com/mnichols08/mnichols08/blob/output/github-contribution-grid-snake2.svg)
 
