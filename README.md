@@ -206,6 +206,8 @@ A financial-literacy application for people learning to manage their first paych
 
 `React` `Node.js` `Express` `MongoDB` `JavaScript` `OAuth` `Automated Testing`
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/09001eee-7ee8-47ba-8104-1d3f734bee57/deploy-status)](https://app.netlify.com/projects/sprout-ctd/deploys)
+
 ---
 
 ### 🥫 [Kitchen Inventory](https://mnix.dev/projects/kitchen-inventory)
@@ -217,6 +219,8 @@ Tracks food, expiration dates, and shopping needs across the fridge, freezer, an
 Built the inventory interface, persistence layer, serverless Airtable integration, filtering, search, and automated tests.
 
 `React` `Vite` `Airtable` `Vitest` `JavaScript`
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/44d04d6d-6f2b-4483-acca-8f01a3c59876/deploy-status)](https://app.netlify.com/projects/ctd-react-final/deploys)
 
 ---
 
@@ -230,6 +234,8 @@ The project grew beyond a basic CRUD exercise into an exploration of **reducers,
 
 `React` `Vite` `React Router` `Context API` `useReducer` `Airtable` `Vitest` `React Testing Library`
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8083f6e0-5126-4a73-aacd-8e311dcd1e05/deploy-status)](https://app.netlify.com/projects/ctd-v3-react-guided-project/deploys)
+
 ---
 
 ### 💵 [Drawer Count](https://mnix.dev/projects/drawer-count)
@@ -241,6 +247,8 @@ An offline-capable cash-drawer calculator with saved profiles and daily history.
 Built with native browser technologies including **Custom Elements, Web Components, Service Workers, and PWA APIs**.
 
 `JavaScript` `Web Components` `PWA` `Service Workers`
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a57448fd-9c4c-4da9-b7ba-bc38ab8f37df/deploy-status)](https://app.netlify.com/projects/drawer-count/deploys)
 
 ---
 
