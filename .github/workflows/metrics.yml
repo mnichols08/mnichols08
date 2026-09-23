@@ -45,7 +45,17 @@ jobs:
             h2, h3, h4 { color: #e3de13 !important; }
             body { background-color: #111111 !important; }
 
-      - name: Generate isometric commit calendar
+      - name: Generate isometric commit calendar (dark)
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          filename: metrics.isocalendar-dark.svg
+          committer_branch: output
+          base: ""
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+
+      - name: Generate isometric commit calendar (light)
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
@@ -54,13 +64,56 @@ jobs:
           base: ""
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
-          extras_css: |
-            :root {
-              --color-canvas-default: #111111 !important;
-              --color-calendar-graph-day-L1-bg: #3e3c20 !important;
-              --color-calendar-graph-day-L2-bg: #827f2b !important;
-              --color-calendar-graph-day-L3-bg: #b6b211 !important;
-              --color-calendar-graph-day-L4-bg: #e3de13 !important;
-              --color-calendar-graph-day-bg: #1a1a1a !important;
-            }
-            body { background-color: #111111 !important; }
+
+  recolor:
+    needs: github-metrics
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout output branch
+        uses: actions/checkout@v4
+        with:
+          ref: output
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Inspect hex colors in SVGs (debug)
+        run: |
+          echo "=== metrics.isocalendar-dark.svg ==="
+          grep -oE '#[0-9a-fA-F]{6}' metrics.isocalendar-dark.svg | sort | uniq -c | sort -rn | head -20
+          echo "=== metrics.isocalendar.svg ==="
+          grep -oE '#[0-9a-fA-F]{6}' metrics.isocalendar.svg | sort | uniq -c | sort -rn | head -20
+
+      - name: Recolor isocalendar SVGs to yellow palette
+        run: |
+          # ---- Dark version ----
+          # GitHub's default dark contribution colors -> your yellow palette
+          sed -i \
+            -e 's/#161b22/#1a1a1a/g' \
+            -e 's/#0e4429/#3e3c20/g' \
+            -e 's/#006d32/#827f2b/g' \
+            -e 's/#26a641/#b6b211/g' \
+            -e 's/#39d353/#e3de13/g' \
+            metrics.isocalendar-dark.svg
+
+          # ---- Light version ----
+          # GitHub's default light contribution colors -> your light yellow palette
+          sed -i \
+            -e 's/#ebedf0/#ebedf0/g' \
+            -e 's/#9be9a8/#f7f5b5/g' \
+            -e 's/#40c463/#efeb6a/g' \
+            -e 's/#30a14e/#e3de13/g' \
+            -e 's/#216e39/#8b8500/g' \
+            metrics.isocalendar.svg
+
+      - name: Commit and push recolored SVGs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add metrics.isocalendar.svg metrics.isocalendar-dark.svg
+
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Recolor isocalendar to yellow palette"
+            git push origin output
+          fi
