@@ -1,4 +1,11 @@
-![Header](./mnichols08.png)
+<a href="https://mnix.dev" target="_blank">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/996c59e0-4263-4815-a91b-16c353622041">
+  <img src="https://github.com/user-attachments/assets/2aa169cd-642d-4783-afde-c9206bafa2ae" alt="mnichols08 banner">
+</picture>
+</a>
+
+
 I am a full-stack developer building web applications with JavaScript, React, Node.js, APIs, and modern web technologies.
 
 I care about getting features to work but I enjoy the engineering around them too: testing, accessibility, authentication, application architecture, deployment, debugging, and making frontend and backend systems work well together.
