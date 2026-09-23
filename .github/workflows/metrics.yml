@@ -12,11 +12,12 @@ jobs:
   github-metrics:
     runs-on: ubuntu-latest
     steps:
-      - name: Generate main metrics
+      # ---------- MAIN METRICS (DARK) ----------
+      - name: Generate main metrics (dark)
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
-          filename: metrics.svg
+          filename: metrics-dark.svg
           committer_branch: output
           base: header, activity, community, repositories, metadata
           config_timezone: America/New_York
@@ -45,6 +46,42 @@ jobs:
             h2, h3, h4 { color: #e3de13 !important; }
             body { background-color: #111111 !important; }
 
+      # ---------- MAIN METRICS (LIGHT) ----------
+      - name: Generate main metrics (light)
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          filename: metrics.svg
+          committer_branch: output
+          base: header, activity, community, repositories, metadata
+          config_timezone: America/New_York
+          plugin_languages: yes
+          plugin_languages_analysis_timeout: 15
+          plugin_languages_categories: markup, programming
+          plugin_languages_recent_categories: markup, programming
+          plugin_languages_details: bytes-size, percentage
+          plugin_languages_limit: 8
+          extras_css: |
+            :root {
+              --color-canvas-default: #F5F4E6 !important;
+              --color-canvas-subtle: #e8e6cf !important;
+              --color-border-default: #827f2b !important;
+              --color-border-muted: #c9c6a3 !important;
+              --color-fg-default: #111111 !important;
+              --color-fg-muted: #3a3814 !important;
+              --color-fg-subtle: #55521e !important;
+              --color-accent-fg: #6b6828 !important;
+              --color-accent-emphasis: #827f2b !important;
+              --color-success-fg: #4a4720 !important;
+              --color-attention-fg: #6b6828 !important;
+              --color-severe-fg: #6b6828 !important;
+              --color-done-fg: #6b6828 !important;
+            }
+            h2, h3, h4 { color: #6b6828 !important; }
+            body { background-color: #F5F4E6 !important; color: #111111 !important; }
+            text, tspan { fill: #111111 !important; }
+
+      # ---------- ISOCALENDAR (DARK) ----------
       - name: Generate isometric commit calendar (dark)
         uses: lowlighter/metrics@latest
         with:
@@ -61,11 +98,10 @@ jobs:
         run: |
           echo "===== /metrics_renders ====="
           ls -la /metrics_renders/ || true
-          echo "===== workspace root ====="
-          ls -la $GITHUB_WORKSPACE/ || true
           echo "===== metrics SVGs anywhere ====="
           find $GITHUB_WORKSPACE -name 'metrics*.svg' -type f 2>/dev/null || true
 
+      # ---------- ISOCALENDAR (LIGHT) ----------
       - name: Generate isometric commit calendar (light)
         uses: lowlighter/metrics@latest
         with:
@@ -97,8 +133,7 @@ jobs:
 
       - name: Recolor isocalendar SVGs to yellow palette
         run: |
-          # ---- Dark version ----
-          # Replace whichever greens exist; the -e patterns that don't match are harmless
+          # ---- Dark isocalendar ----
           if [ -f metrics.isocalendar-dark.svg ]; then
             sed -i \
               -e 's/#161b22/#1a1a1a/g' \
@@ -113,11 +148,10 @@ jobs:
               -e 's/#c9d1d9/#e3de13/g' \
               -e 's/#8b949e/#b6b211/g' \
               -e 's/#58a6ff/#e3de13/g' \
-              -e 's/#ffffff/#e3de13/g' \
               metrics.isocalendar-dark.svg
           fi
 
-          # ---- Light version ----
+          # ---- Light isocalendar ----
           if [ -f metrics.isocalendar.svg ]; then
             sed -i \
               -e 's/#9be9a8/#f7f5b5/g' \
