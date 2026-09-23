@@ -4,7 +4,18 @@
   <img src="./assets/banner-light.png" alt="Mikey Nichols — mnix.dev">
 </picture>
 </a>
-
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=mnichols08&hide_border=true&background=111111&stroke=E3DE13&ring=E3DE13&fire=E3DE13&currStreakLabel=E3DE13&sideLabels=ffffff&sideNums=ffffff&dates=b6b211">
+    <img src="https://streak-stats.demolab.com?user=mnichols08&hide_border=true&background=F5F4E6&stroke=111111&ring=827F2B&fire=827F2B&currStreakLabel=111111&sideLabels=111111&sideNums=111111&dates=827F2B" alt="GitHub Streak" height="165">
+  </picture>
+</p>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=E3DE13&center=true&vCenter=true&width=600&lines=Full-Stack+Developer;Building+with+React+%26+Node.js;Exploring+Rust+%2B+WebAssembly;Web+Components+Enthusiast">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=827F2B&center=true&vCenter=true&width=600&lines=Full-Stack+Developer;Building+with+React+%26+Node.js;Exploring+Rust+%2B+WebAssembly;Web+Components+Enthusiast" alt="Typing SVG">
+  </picture>
+</p>
 <br>
 
 <p align="center">
@@ -167,6 +178,18 @@ I also spend a lot of time exploring **Web Components**, progressive web applica
     <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Render-111111?style=for-the-badge&logo=render&logoColor=white">
     <img src="https://img.shields.io/badge/Render-F5F4E6?style=for-the-badge&logo=render&logoColor=111111" alt="Render">
   </picture>
+</p>
+
+---
+
+# GitHub Metrics
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/mnichols08/mnichols08/output/metrics.svg" alt="GitHub Metrics">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/mnichols08/mnichols08/output/metrics.isocalendar.svg" alt="Isometric Commit Calendar">
 </p>
 
 ---
