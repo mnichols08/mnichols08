@@ -48,7 +48,7 @@ jobs:
               --color-calendar-graph-day-L4-bg: #e3de13 !important;
               --color-calendar-graph-day-bg: #1a1a1a !important;
             }
-            h2, h3, h4 { color: #e3de13 !important; }
+            h1, h2, h3, h4, a { color: #e3de13 !important; }
             body { background-color: #111111 !important; }
 
       # ---------- MAIN METRICS (LIGHT) ----------
@@ -87,14 +87,11 @@ jobs:
               --color-calendar-graph-day-L4-bg: #4a4720 !important;
               --color-calendar-graph-day-bg: #ebe9d4 !important;
             }
-            h2, h3, h4 { color: #111111 !important; }
+            h1, h2, h3, h4, a { color: #111111 !important; }
             body { background-color: #F5F4E6 !important; color: #111111 !important; }
             text, tspan { fill: #111111 !important; }
 
       # ---------- ISOCALENDAR (DARK) ----------
-      # Note: this plugin has no real theme option — both renders are
-      # identical at this point. All dark/light differentiation happens
-      # in the recolor job below.
       - name: Generate isometric commit calendar (dark)
         uses: lowlighter/metrics@latest
         with:
@@ -134,15 +131,20 @@ jobs:
           hex_re = re.compile(r'#([0-9a-fA-F]{6})\b')
           TARGET_H, _, _ = colorsys.rgb_to_hls(227/255, 222/255, 19/255)
 
-          # ---- Small "contribution squares" row + language squares:
-          #      exact swaps only, so language-bar brand colors stay untouched ----
+          # ---- Small "contribution squares" row + header link-blue text:
+          #      exact swaps only, so language-bar brand colors stay untouched.
+          #      Both files share the SAME raw source hexes — only the
+          #      targets differ per theme. ----
           EXPLICIT_ONLY = {
               'metrics-dark.svg': {
-                  '161b22': '1a1a1a',
-                  '0e4429': '3e3c20',
-                  '006d32': '827f2b',
-                  '26a641': 'b6b211',
-                  '39d353': 'e3de13',
+                  'ebedf0': '1a1a1a',
+                  '9be9a8': '3e3c20',
+                  '40c463': '827f2b',
+                  '30a14e': 'b6b211',
+                  '216e39': 'e3de13',
+                  '0969da': 'e3de13',  # name heading link-blue
+                  '0366d6': 'e3de13',
+                  '0a3069': 'e3de13',
               },
               'metrics.svg': {
                   'ebedf0': 'ebe9d4',
@@ -150,6 +152,9 @@ jobs:
                   '40c463': 'efeb6a',
                   '30a14e': 'e3de13',
                   '216e39': '8b8500',
+                  '0969da': '111111',  # name heading link-blue -> black
+                  '0366d6': '111111',
+                  '0a3069': '111111',
               },
           }
 
@@ -160,27 +165,23 @@ jobs:
               h, l, s = colorsys.rgb_to_hls(r, g, b)
 
               if s < 0.03:
-                  return None  # true neutral, background handled separately
+                  return None
 
-              # Bright/vivid accent = heading text, streak icon, etc.
               is_bright_accent = (l >= 0.45 and s >= 0.55)
 
               if theme == 'light':
                   if is_bright_accent:
-                      return '111111'  # yellow text -> black on cream
-                  nr, ng, nb = colorsys.hls_to_rgb(TARGET_H, l, s)  # keep as-is (already fine)
-              else:  # dark
+                      return '111111'
+                  nr, ng, nb = colorsys.hls_to_rgb(TARGET_H, l, s)
+              else:
                   if is_bright_accent:
-                      return 'e3de13'  # keep vivid yellow, good on black
-                  # cube shading: invert lightness so higher-activity
-                  # (originally darker/more saturated) glows brighter on black
+                      return 'e3de13'
                   new_l = 1 - l
                   new_s = min(1.0, s * 1.15)
                   nr, ng, nb = colorsys.hls_to_rgb(TARGET_H, new_l, new_s)
 
               return '{:02x}{:02x}{:02x}'.format(round(nr*255), round(ng*255), round(nb*255))
 
-          # ---- Isocalendar files: background explicit swap + generic classify ----
           ISOCAL = {
               'metrics.isocalendar-dark.svg': ('dark', '1a1a1a'),
               'metrics.isocalendar.svg': ('light', 'f5f4e6'),
@@ -210,7 +211,6 @@ jobs:
                   f.write(content)
               print(f"{fname}: bg->{bg_target}, {len(mapping)} colors remapped")
 
-          # ---- metrics.svg / metrics-dark.svg: exact swaps only ----
           for fname, explicit_map in EXPLICIT_ONLY.items():
               try:
                   with open(fname, 'r', encoding='utf-8') as f:
