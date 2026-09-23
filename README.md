@@ -186,7 +186,6 @@ I'm interested in **full-stack, frontend, and software development opportunities
   <img
     src="https://capsule-render.vercel.app/api?type=waving&color=0:111111,35:827F2B,70:E3DE13,100:E3DE13&height=120&section=footer"
     width="100%"
-    height="2em"
     alt=""
   >
 </p>
