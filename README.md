@@ -20,9 +20,18 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Full--Stack_Development-111111?style=for-the-badge&logoColor=E3DE13" alt="Full-Stack Development">
-  <img src="https://img.shields.io/badge/Web_Components-111111?style=for-the-badge&logo=webcomponents.org&logoColor=E3DE13" alt="Web Components">
-  <img src="https://img.shields.io/badge/Testing_%26_CI-111111?style=for-the-badge&logo=githubactions&logoColor=E3DE13" alt="Testing and CI">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Full--Stack_Development-111111?style=for-the-badge&logoColor=E3DE13">
+    <img src="https://img.shields.io/badge/Full--Stack_Development-F5F4E6?style=for-the-badge&logoColor=111111" alt="Full-Stack Development">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Web_Components-111111?style=for-the-badge&logo=webcomponents.org&logoColor=E3DE13">
+    <img src="https://img.shields.io/badge/Web_Components-F5F4E6?style=for-the-badge&logo=webcomponents.org&logoColor=111111" alt="Web Components">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Testing_%26_CI-111111?style=for-the-badge&logo=githubactions&logoColor=E3DE13">
+    <img src="https://img.shields.io/badge/Testing_%26_CI-F5F4E6?style=for-the-badge&logo=githubactions&logoColor=111111" alt="Testing and CI">
+  </picture>
 </p>
 
 ---
@@ -43,46 +52,121 @@ I also spend a lot of time exploring **Web Components**, progressive web applica
 
 <p>
   <img src="https://img.shields.io/badge/JavaScript-E3DE13?style=for-the-badge&logo=javascript&logoColor=111111" alt="JavaScript">
-  <img src="https://img.shields.io/badge/React-111111?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
-  <img src="https://img.shields.io/badge/Next.js-111111?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js">
-  <img src="https://img.shields.io/badge/Web_Components-111111?style=for-the-badge&logo=webcomponents.org&logoColor=E3DE13" alt="Web Components">
-  <img src="https://img.shields.io/badge/HTML5-111111?style=for-the-badge&logo=html5&logoColor=E34F26" alt="HTML5">
-  <img src="https://img.shields.io/badge/CSS3-111111?style=for-the-badge&logo=css&logoColor=1572B6" alt="CSS3">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/React-111111?style=for-the-badge&logo=react&logoColor=61DAFB">
+    <img src="https://img.shields.io/badge/React-F5F4E6?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Next.js-111111?style=for-the-badge&logo=nextdotjs&logoColor=white">
+    <img src="https://img.shields.io/badge/Next.js-F5F4E6?style=for-the-badge&logo=nextdotjs&logoColor=111111" alt="Next.js">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Web_Components-111111?style=for-the-badge&logo=webcomponents.org&logoColor=E3DE13">
+    <img src="https://img.shields.io/badge/Web_Components-F5F4E6?style=for-the-badge&logo=webcomponents.org&logoColor=111111" alt="Web Components">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/HTML5-111111?style=for-the-badge&logo=html5&logoColor=E34F26">
+    <img src="https://img.shields.io/badge/HTML5-F5F4E6?style=for-the-badge&logo=html5&logoColor=E34F26" alt="HTML5">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/CSS3-111111?style=for-the-badge&logo=css&logoColor=1572B6">
+    <img src="https://img.shields.io/badge/CSS3-F5F4E6?style=for-the-badge&logo=css&logoColor=1572B6" alt="CSS3">
+  </picture>
 </p>
 
 ## Backend & APIs
 
 <p>
-  <img src="https://img.shields.io/badge/Node.js-111111?style=for-the-badge&logo=nodedotjs&logoColor=5FA04E" alt="Node.js">
-  <img src="https://img.shields.io/badge/Express-111111?style=for-the-badge&logo=express&logoColor=white" alt="Express">
-  <img src="https://img.shields.io/badge/REST_APIs-111111?style=for-the-badge&logo=fastapi&logoColor=E3DE13" alt="REST APIs">
-  <img src="https://img.shields.io/badge/MongoDB-111111?style=for-the-badge&logo=mongodb&logoColor=47A248" alt="MongoDB">
-  <img src="https://img.shields.io/badge/PostgreSQL-111111?style=for-the-badge&logo=postgresql&logoColor=4169E1" alt="PostgreSQL">
-  <img src="https://img.shields.io/badge/Airtable-111111?style=for-the-badge&logo=airtable&logoColor=18BFFF" alt="Airtable">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Node.js-111111?style=for-the-badge&logo=nodedotjs&logoColor=5FA04E">
+    <img src="https://img.shields.io/badge/Node.js-F5F4E6?style=for-the-badge&logo=nodedotjs&logoColor=5FA04E" alt="Node.js">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Express-111111?style=for-the-badge&logo=express&logoColor=white">
+    <img src="https://img.shields.io/badge/Express-F5F4E6?style=for-the-badge&logo=express&logoColor=111111" alt="Express">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/REST_APIs-111111?style=for-the-badge&logo=fastapi&logoColor=E3DE13">
+    <img src="https://img.shields.io/badge/REST_APIs-F5F4E6?style=for-the-badge&logo=fastapi&logoColor=111111" alt="REST APIs">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/MongoDB-111111?style=for-the-badge&logo=mongodb&logoColor=47A248">
+    <img src="https://img.shields.io/badge/MongoDB-F5F4E6?style=for-the-badge&logo=mongodb&logoColor=47A248" alt="MongoDB">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/PostgreSQL-111111?style=for-the-badge&logo=postgresql&logoColor=4169E1">
+    <img src="https://img.shields.io/badge/PostgreSQL-F5F4E6?style=for-the-badge&logo=postgresql&logoColor=4169E1" alt="PostgreSQL">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Airtable-111111?style=for-the-badge&logo=airtable&logoColor=18BFFF">
+    <img src="https://img.shields.io/badge/Airtable-F5F4E6?style=for-the-badge&logo=airtable&logoColor=18BFFF" alt="Airtable">
+  </picture>
 </p>
 
 ## Testing & Quality
 
 <p>
-  <img src="https://img.shields.io/badge/TypeScript-111111?style=for-the-badge&logo=typescript&logoColor=3178C6" alt="TypeScript">
-  <img src="https://img.shields.io/badge/Vitest-111111?style=for-the-badge&logo=vitest&logoColor=6E9F18" alt="Vitest">
-  <img src="https://img.shields.io/badge/Jest-111111?style=for-the-badge&logo=jest&logoColor=C21325" alt="Jest">
-  <img src="https://img.shields.io/badge/React_Testing_Library-111111?style=for-the-badge&logo=testinglibrary&logoColor=E33332" alt="React Testing Library">
-  <img src="https://img.shields.io/badge/Playwright-111111?style=for-the-badge&logo=playwright&logoColor=45BA4B" alt="Playwright">
-  <img src="https://img.shields.io/badge/ESLint-111111?style=for-the-badge&logo=eslint&logoColor=4B32C3" alt="ESLint">
-  <img src="https://img.shields.io/badge/Prettier-111111?style=for-the-badge&logo=prettier&logoColor=F7B93E" alt="Prettier">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/TypeScript-111111?style=for-the-badge&logo=typescript&logoColor=3178C6">
+    <img src="https://img.shields.io/badge/TypeScript-F5F4E6?style=for-the-badge&logo=typescript&logoColor=3178C6" alt="TypeScript">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Vitest-111111?style=for-the-badge&logo=vitest&logoColor=6E9F18">
+    <img src="https://img.shields.io/badge/Vitest-F5F4E6?style=for-the-badge&logo=vitest&logoColor=6E9F18" alt="Vitest">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Jest-111111?style=for-the-badge&logo=jest&logoColor=C21325">
+    <img src="https://img.shields.io/badge/Jest-F5F4E6?style=for-the-badge&logo=jest&logoColor=C21325" alt="Jest">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/React_Testing_Library-111111?style=for-the-badge&logo=testinglibrary&logoColor=E33332">
+    <img src="https://img.shields.io/badge/React_Testing_Library-F5F4E6?style=for-the-badge&logo=testinglibrary&logoColor=E33332" alt="React Testing Library">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Playwright-111111?style=for-the-badge&logo=playwright&logoColor=45BA4B">
+    <img src="https://img.shields.io/badge/Playwright-F5F4E6?style=for-the-badge&logo=playwright&logoColor=45BA4B" alt="Playwright">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/ESLint-111111?style=for-the-badge&logo=eslint&logoColor=4B32C3">
+    <img src="https://img.shields.io/badge/ESLint-F5F4E6?style=for-the-badge&logo=eslint&logoColor=4B32C3" alt="ESLint">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Prettier-111111?style=for-the-badge&logo=prettier&logoColor=F7B93E">
+    <img src="https://img.shields.io/badge/Prettier-F5F4E6?style=for-the-badge&logo=prettier&logoColor=F7B93E" alt="Prettier">
+  </picture>
 </p>
 
 ## Workflow & Deployment
 
 <p>
-  <img src="https://img.shields.io/badge/Git-111111?style=for-the-badge&logo=git&logoColor=F05032" alt="Git">
-  <img src="https://img.shields.io/badge/GitHub-111111?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
-  <img src="https://img.shields.io/badge/GitHub_Actions-111111?style=for-the-badge&logo=githubactions&logoColor=2088FF" alt="GitHub Actions">
-  <img src="https://img.shields.io/badge/Vite-111111?style=for-the-badge&logo=vite&logoColor=646CFF" alt="Vite">
-  <img src="https://img.shields.io/badge/Postman-111111?style=for-the-badge&logo=postman&logoColor=FF6C37" alt="Postman">
-  <img src="https://img.shields.io/badge/Netlify-111111?style=for-the-badge&logo=netlify&logoColor=00C7B7" alt="Netlify">
-  <img src="https://img.shields.io/badge/Render-111111?style=for-the-badge&logo=render&logoColor=white" alt="Render">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Git-111111?style=for-the-badge&logo=git&logoColor=F05032">
+    <img src="https://img.shields.io/badge/Git-F5F4E6?style=for-the-badge&logo=git&logoColor=F05032" alt="Git">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/GitHub-111111?style=for-the-badge&logo=github&logoColor=white">
+    <img src="https://img.shields.io/badge/GitHub-F5F4E6?style=for-the-badge&logo=github&logoColor=111111" alt="GitHub">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/GitHub_Actions-111111?style=for-the-badge&logo=githubactions&logoColor=2088FF">
+    <img src="https://img.shields.io/badge/GitHub_Actions-F5F4E6?style=for-the-badge&logo=githubactions&logoColor=2088FF" alt="GitHub Actions">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Vite-111111?style=for-the-badge&logo=vite&logoColor=646CFF">
+    <img src="https://img.shields.io/badge/Vite-F5F4E6?style=for-the-badge&logo=vite&logoColor=646CFF" alt="Vite">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Postman-111111?style=for-the-badge&logo=postman&logoColor=FF6C37">
+    <img src="https://img.shields.io/badge/Postman-F5F4E6?style=for-the-badge&logo=postman&logoColor=FF6C37" alt="Postman">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Netlify-111111?style=for-the-badge&logo=netlify&logoColor=00C7B7">
+    <img src="https://img.shields.io/badge/Netlify-F5F4E6?style=for-the-badge&logo=netlify&logoColor=00C7B7" alt="Netlify">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Render-111111?style=for-the-badge&logo=render&logoColor=white">
+    <img src="https://img.shields.io/badge/Render-F5F4E6?style=for-the-badge&logo=render&logoColor=111111" alt="Render">
+  </picture>
 </p>
 
 ---
@@ -181,11 +265,3 @@ I'm interested in **full-stack, frontend, and software development opportunities
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/mnichols08/mnichols08/output/github-snake.svg">
   <img alt="GitHub contribution snake" src="github-snake.svg">
 </picture>
-
-<p align="center">
-  <img
-    src="https://capsule-render.vercel.app/api?type=waving&color=0:111111,35:827F2B,70:E3DE13,100:E3DE13&height=120&section=footer"
-    width="100%"
-    alt=""
-  >
-</p>
