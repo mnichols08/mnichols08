@@ -42,6 +42,11 @@ jobs:
               --color-attention-fg: #e3de13 !important;
               --color-severe-fg: #e3de13 !important;
               --color-done-fg: #e3de13 !important;
+              --color-calendar-graph-day-L1-bg: #3e3c20 !important;
+              --color-calendar-graph-day-L2-bg: #827f2b !important;
+              --color-calendar-graph-day-L3-bg: #b6b211 !important;
+              --color-calendar-graph-day-L4-bg: #e3de13 !important;
+              --color-calendar-graph-day-bg: #1a1a1a !important;
             }
             h2, h3, h4 { color: #e3de13 !important; }
             body { background-color: #111111 !important; }
@@ -76,6 +81,11 @@ jobs:
               --color-attention-fg: #6b6828 !important;
               --color-severe-fg: #6b6828 !important;
               --color-done-fg: #6b6828 !important;
+              --color-calendar-graph-day-L1-bg: #d8d6bd !important;
+              --color-calendar-graph-day-L2-bg: #b6b211 !important;
+              --color-calendar-graph-day-L3-bg: #827f2b !important;
+              --color-calendar-graph-day-L4-bg: #4a4720 !important;
+              --color-calendar-graph-day-bg: #ebe9d4 !important;
             }
             h2, h3, h4 { color: #6b6828 !important; }
             body { background-color: #F5F4E6 !important; color: #111111 !important; }
@@ -93,13 +103,6 @@ jobs:
           plugin_isocalendar_duration: full-year
           config: |
             theme: dark
-
-      - name: Debug - what did the dark step produce?
-        run: |
-          echo "===== /metrics_renders ====="
-          ls -la /metrics_renders/ || true
-          echo "===== metrics SVGs anywhere ====="
-          find $GITHUB_WORKSPACE -name 'metrics*.svg' -type f 2>/dev/null || true
 
       # ---------- ISOCALENDAR (LIGHT) ----------
       - name: Generate isometric commit calendar (light)
@@ -122,56 +125,66 @@ jobs:
           ref: output
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Inspect hex colors in SVGs (debug)
+      - name: Hue-rotate isocalendar SVGs to yellow palette
         run: |
-          echo "===== files present ====="
-          ls -la
-          echo "===== metrics.isocalendar-dark.svg ====="
-          grep -oE '#[0-9a-fA-F]{6}' metrics.isocalendar-dark.svg 2>/dev/null | sort | uniq -c | sort -rn | head -20 || echo "FILE MISSING"
-          echo "===== metrics.isocalendar.svg ====="
-          grep -oE '#[0-9a-fA-F]{6}' metrics.isocalendar.svg 2>/dev/null | sort | uniq -c | sort -rn | head -20 || echo "FILE MISSING"
+          python3 << 'PYEOF'
+          import re, colorsys
 
-      - name: Recolor isocalendar SVGs to yellow palette
-        run: |
-          # ---- Dark isocalendar ----
-          if [ -f metrics.isocalendar-dark.svg ]; then
-            sed -i \
-              -e 's/#161b22/#1a1a1a/g' \
-              -e 's/#0e4429/#3e3c20/g' \
-              -e 's/#006d32/#827f2b/g' \
-              -e 's/#26a641/#b6b211/g' \
-              -e 's/#39d353/#e3de13/g' \
-              metrics.isocalendar-dark.svg
+          # Explicit background swaps first (guarantees exact canvas tone
+          # rather than leaving it to hue-math approximation)
+          EXPLICIT = {
+              'metrics.isocalendar-dark.svg': {
+                  '161b22': '1a1a1a',
+              },
+              'metrics.isocalendar.svg': {
+                  'ffffff': 'f5f4e6',
+              },
+          }
 
-            # Dark mode text -> yellow
-            sed -i \
-              -e 's/#c9d1d9/#e3de13/g' \
-              -e 's/#8b949e/#b6b211/g' \
-              -e 's/#58a6ff/#e3de13/g' \
-              metrics.isocalendar-dark.svg
-          fi
+          TARGET_RGB = (227/255, 222/255, 19/255)
+          target_h, _, _ = colorsys.rgb_to_hls(*TARGET_RGB)
 
-          # ---- Light isocalendar ----
-          if [ -f metrics.isocalendar.svg ]; then
-            sed -i \
-              -e 's/#9be9a8/#f7f5b5/g' \
-              -e 's/#40c463/#efeb6a/g' \
-              -e 's/#30a14e/#e3de13/g' \
-              -e 's/#216e39/#8b8500/g' \
-              metrics.isocalendar.svg
+          hex_re = re.compile(r'#([0-9a-fA-F]{6})\b')
 
-            # Light mode text -> black
-            sed -i \
-              -e 's/#959da5/#111111/g' \
-              -e 's/#0366d6/#111111/g' \
-              -e 's/#0969da/#111111/g' \
-              -e 's/#0a3069/#111111/g' \
-              -e 's/#54aeff/#111111/g' \
-              -e 's/#b6e3ff/#111111/g' \
-              -e 's/#24292e/#111111/g' \
-              -e 's/#586069/#111111/g' \
-              metrics.isocalendar.svg
-          fi
+          for fname, explicit_map in EXPLICIT.items():
+              try:
+                  with open(fname, 'r', encoding='utf-8') as f:
+                      content = f.read()
+              except FileNotFoundError:
+                  print(f"skip missing {fname}")
+                  continue
+
+              # 1. explicit exact swaps
+              for old, new in explicit_map.items():
+                  content = re.sub(r'(?i)#' + old, '#' + new, content)
+
+              # 2. generic hue-rotate for everything else (any real saturation
+              #    gets pulled to the yellow hue; true grays are untouched
+              #    since they have ~0 saturation to rotate)
+              colors = set(m.group(1).lower() for m in hex_re.finditer(content))
+              mapping = {}
+              for hexcode in colors:
+                  r = int(hexcode[0:2], 16) / 255
+                  g = int(hexcode[2:4], 16) / 255
+                  b = int(hexcode[4:6], 16) / 255
+                  h, l, s = colorsys.rgb_to_hls(r, g, b)
+                  if s < 0.03:
+                      continue  # true neutral, leave as-is
+                  nr, ng, nb = colorsys.hls_to_rgb(target_h, l, s)
+                  new_hex = '{:02x}{:02x}{:02x}'.format(
+                      round(nr * 255), round(ng * 255), round(nb * 255)
+                  )
+                  if new_hex != hexcode:
+                      mapping[hexcode] = new_hex
+
+              for old, new in mapping.items():
+                  content = re.sub(r'(?i)#' + old, '#' + new, content)
+
+              with open(fname, 'w', encoding='utf-8') as f:
+                  f.write(content)
+
+              print(f"{fname}: {len(explicit_map)} explicit + {len(mapping)} hue-rotated")
+          PYEOF
 
       - name: Commit and push recolored SVGs
         run: |
