@@ -317,7 +317,12 @@ I write about the things I'm learning and building at **[Journey to Code](https:
 ### ✍️ Recent Articles
 > Automatically synchronized from journeytocode.io via GitHub Actions.
 <!-- BLOG-POST-LIST:START -->
-<!-- BLOG-POST-LIST:END -->
+- [What a Long, Strange Trip...](https://journeytocode.io/what-a-long-strange-trip) — The last time I posted was on April 28, 2025. I know the exact date because it was the same day I got married.
+Looking b...
+- [From DOS to Desktop Disasters](https://journeytocode.io/from-dos-to-desktop-disasters) — I grew up as the youngest offspring of one particularly tech-savvy individual who among many jobs, initially moved our f...
+- [The Future of Web Components](https://journeytocode.io/the-future-of-web-components) — Web Components have come a long way since their introduction, evolving from a niche standard to a cornerstone of modern...
+- [Advanced Patterns &amp; Integration with Frameworks](https://journeytocode.io/advanced-patterns-and-integration-with-frameworks) — Web Components promise the holy grail of front-end development: truly reusable, framework-agnostic components that work...
+- [Real-World Examples &amp; Patterns in Web Components](https://journeytocode.io/real-world-examples-and-patterns-in-web-components) — In today&#39;s diverse front-end landscape, Web Components stand out as a platform-native solution for creating reusable UI...<!-- BLOG-POST-LIST:END -->
 
 ---
 
