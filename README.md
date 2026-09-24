@@ -278,10 +278,20 @@ I'm also continuing to explore:
 
 # Technical Writing
 
-I write about the things I'm learning and building at **[Journey to Code](https://journeytocode.io)**.
+I write about the things I'm learning and building at **[Journey to Code](https://journeytocode.io)**. Topics include JavaScript, Web Components, Git, application architecture, project walkthroughs, and experiments that are worth understanding beyond just getting the code to work.
 
-Topics include JavaScript, Web Components, Git, application architecture, project walkthroughs, and experiments that are worth understanding beyond just getting the code to work.
+### 📚 Featured Series
+* **[Commit to Success: Mastering Git](https://journeytocode.io/series/learn-git-from-basics-to-advanced)** — Moving beyond basic commands to master version control, branches, merging, and real-world collaboration.
+* **[Journey to Web Components](https://journeytocode.io/series/web-components-fundamentals-to-advanced)** — Building reusable UI architecture without heavy frameworks using Custom Elements, Shadow DOM, and native browser APIs.
+* **[Mastering the Fetch API & Browser Storage](https://journeytocode.io/series/mastering-fetch-api-browser-storage)** — Network requests, client-side persistence (IndexedDB, Cache API), and resilient offline-first design.
+* **[Mastering the Web Audio API](https://journeytocode.io/series/complete-web-audio-api-tutorial)** — Exploring creative coding, spatial audio, synthesis, and processing directly in the browser.
+* **[Coding Patterns Demystified](https://journeytocode.io/coding-patterns-demystified)** — A Deep Dive into the Model-View-Controller (MVC) Pattern shipping code.
 
+### ✍️ Recent Articles
+<!-- BLOG-POST-LIST:START -->
+<!-- BLOG-POST-LIST:END -->
+
+<br>
 <p align="center">
   <a href="https://journeytocode.io">
     <img src="https://img.shields.io/badge/Read-Journey_to_Code-E3DE13?style=for-the-badge&logo=hashnode&logoColor=111111" alt="Journey to Code">
