@@ -33,21 +33,6 @@
   </a>
 </p>
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Full--Stack_Development-111111?style=for-the-badge&logoColor=E3DE13">
-    <img src="https://img.shields.io/badge/Full--Stack_Development-F5F4E6?style=for-the-badge&logoColor=111111" alt="Full-Stack Development">
-  </picture>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Web_Components-111111?style=for-the-badge&logo=webcomponents.org&logoColor=E3DE13">
-    <img src="https://img.shields.io/badge/Web_Components-F5F4E6?style=for-the-badge&logo=webcomponents.org&logoColor=111111" alt="Web Components">
-  </picture>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Testing_%26_CI-111111?style=for-the-badge&logo=githubactions&logoColor=E3DE13">
-    <img src="https://img.shields.io/badge/Testing_%26_CI-F5F4E6?style=for-the-badge&logo=githubactions&logoColor=111111" alt="Testing and CI">
-  </picture>
-</p>
-
 ---
 
 # About Me
@@ -56,7 +41,7 @@ I'm a **full-stack developer** building web applications with JavaScript, React,
 
 I enjoy building the feature, but I'm equally interested in the engineering around it: **testing, accessibility, authentication, application architecture, deployment, debugging, and making frontend and backend systems work well together.**
 
-I also spend a lot of time exploring **Web Components**, progressive web applications, automated testing, and the parts of software development that make an application easier to maintain after the first version ships.
+I'm currently expanding into **Rust and WebAssembly** — exploring how Rust can manage compute-intensive domain logic while native Web Components render high-performance user interfaces. I'm particularly drawn to teams building performance-sensitive frontend tooling, offline-first applications, and framework-agnostic UI architecture.
 
 ---
 
@@ -211,9 +196,8 @@ I also spend a lot of time exploring **Web Components**, progressive web applica
 
 **Financial Literacy Platform · Full-Stack · Team Practicum**
 
-A financial-literacy application for people learning to manage their first paychecks, bank accounts, and bills.
-
-**My role:** Co-Project Lead · Full-Stack Developer · Testing Lead
+* **Architecture & Lead:** Co-Project Lead and Testing Lead — set security practices and led CI test automation across front- and back-end modules.
+* **Testing Strategy:** Maintained 85%+ code coverage on critical authentication and ledger endpoints. *(Full breakdown in the case study →)*
 
 `React` `Node.js` `Express` `MongoDB` `JavaScript` `OAuth` `Automated Testing`
 
@@ -225,9 +209,8 @@ A financial-literacy application for people learning to manage their first paych
 
 **Full-Stack Inventory Application · Individual Capstone**
 
-Tracks food, expiration dates, and shopping needs across the fridge, freezer, and pantry.
-
-Built the inventory interface, persistence layer, serverless Airtable integration, filtering, search, and automated tests.
+* **Data Management:** Optimistic UI state synced against a serverless backend, keeping the frontend responsive under network latency.
+* **Resiliency & Search:** Client-side caching, search indexing, and expiration-alert logic, all covered by unit tests.
 
 `React` `Vite` `Airtable` `Vitest` `JavaScript`
 
@@ -235,13 +218,12 @@ Built the inventory interface, persistence layer, serverless Airtable integratio
 
 ---
 
-### ✅ [React Todo App (Read Case Study →)](https://mnix.dev/projects/ctd-todo-app)
+### ✅ [React Todo App (View Project Repo →)](https://github.com/mnichols08/ctd-react-v3-guided-project)
 
 **React Application · State Management · Automated Testing**
 
-A feature-rich todo application built while developing deeper React skills, with structured state management, routing, persistence, pagination, and a substantial automated test suite.
-
-The project grew beyond a basic CRUD exercise into an exploration of **reducers, context, component architecture, asynchronous data, and testing maintainable React applications.**
+* **Advanced Patterns:** Scalable state orchestration using `useReducer`, Context API, persistent storage adapters, and custom hooks.
+* **Comprehensive Testing:** Test suites covering async network interactions, pagination, and error boundaries.
 
 `React` `Vite` `React Router` `Context API` `useReducer` `Airtable` `Vitest` `React Testing Library`
 
@@ -253,9 +235,8 @@ The project grew beyond a basic CRUD exercise into an exploration of **reducers,
 
 **Installable PWA · Web Components**
 
-An offline-capable cash-drawer calculator with saved profiles and daily history.
-
-Built with native browser technologies including **Custom Elements, Web Components, Service Workers, and PWA APIs**.
+* **Zero-Framework Architecture:** Built with vanilla Web Components (`Custom Elements`, `Shadow DOM`) for minimal bundle footprint.
+* **Offline First:** Custom Service Worker caching and `IndexedDB` persistence for offline cash-drawer auditing.
 
 `JavaScript` `Web Components` `PWA` `Service Workers`
 
@@ -265,22 +246,65 @@ Built with native browser technologies including **Custom Elements, Web Componen
 
 # What I'm Exploring
 
-I'm currently expanding into **Rust and WebAssembly**, experimenting with how Rust can share application and game logic between the browser and server while Web Components handle the interface.
+Pushing further into **Rust and WebAssembly**, using WASM for compute-heavy domain logic behind native Web Component UIs — no framework in the render path.
 
-I'm also continuing to explore:
+<details>
+<summary><b>🛠️ View Native Web Component Example</b></summary>
 
-* reusable UI architecture with native Web Components
-* progressive web applications and offline-first design
-* authentication and application security
-* automated integration and end-to-end testing
-* CI/CD and production deployment
-* accessible interfaces and keyboard interaction
+```javascript
+import init, { calculate_inventory_forecast } from './pkg/wasm_calc_inv_forecast.js';
+
+// Minimal Framework-free Encapsulated UI Component
+class MnixMetricCard extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+  }
+
+  async connectedCallback() {
+    await init(); // Initialize WebAssembly module
+
+    const stock = parseFloat(this.getAttribute('stock')) || 0;
+    const usage = parseFloat(this.getAttribute('daily-usage')) || 0;
+    
+    // Execute high-performance Rust logic via WASM
+    const daysLeft = calculate_inventory_forecast(usage, stock);
+
+    this.shadowRoot.innerHTML = `
+      <style>
+        :host { display: block; font-family: monospace; border: 1px solid #333; padding: 1rem; border-radius: 6px; }
+        .val { font-size: 1.5rem; font-weight: bold; color: #E3DE13; }
+      </style>
+
+      <div>
+        <small>Inventory Forecast (via WASM)</small>
+        <div class="val">${daysLeft === Infinity ? 'N/A' : daysLeft + ' days'}</div>
+      </div>
+    `;
+  }
+}
+
+customElements.define('mnix-metric-card', MnixMetricCard);
+```
+
+```rust
+use wasm_bindgen::prelude::*;
+
+#[wasm_bindgen]
+pub fn calculate_inventory_forecast(daily_usage: f64, stock: f64) -> f64 {
+    if daily_usage <= 0.0 {
+        return f64::INFINITY;
+    }
+    (stock / daily_usage).floor()
+}
+```
+</details>
 
 ---
 
 # Technical Writing
 
-I write about the things I'm learning and building at **[Journey to Code](https://journeytocode.io)**. Topics include JavaScript, Web Components, Git, application architecture, project walkthroughs, and experiments that are worth understanding beyond just getting the code to work.
+I write about the things I'm learning and building at **[Journey to Code](https://journeytocode.io)**. Topics include JavaScript, Web Components, Git, application architecture, project walkthroughs, and experiments worth understanding beyond just getting the code to work.
 
 ### 📚 Featured Series
 * **[Commit to Success: Mastering Git](https://journeytocode.io/series/learn-git-from-basics-to-advanced)** — Moving beyond basic commands to master version control, branches, merging, and real-world collaboration.
@@ -289,27 +313,22 @@ I write about the things I'm learning and building at **[Journey to Code](https:
 * **[Mastering the Web Audio API](https://journeytocode.io/series/complete-web-audio-api-tutorial)** — Exploring creative coding, spatial audio, synthesis, and processing directly in the browser.
 * **[Coding Patterns Demystified](https://journeytocode.io/coding-patterns-demystified)** — A Deep Dive into the Model-View-Controller (MVC) Pattern shipping code.
 
+<!--
 ### ✍️ Recent Articles
-<!-- BLOG-POST-LIST:START -->
-<!-- BLOG-POST-LIST:END -->
-
-<br>
-<p align="center">
-  <a href="https://journeytocode.io">
-    <img src="https://img.shields.io/badge/Read-Journey_to_Code-E3DE13?style=for-the-badge&logo=hashnode&logoColor=111111" alt="Journey to Code">
-  </a>
-  <a href="https://codepen.io/mnichols08">
-    <img src="https://img.shields.io/badge/CodePen-mnichols08-111111?style=for-the-badge&logo=codepen&logoColor=white" alt="CodePen">
-  </a>
-</p>
+> Automatically synchronized from journeytocode.io via GitHub Actions.
+BLOG-POST-LIST:START
+BLOG-POST-LIST:END
+Re-enable this block once the sync Action is confirmed running — an empty
+placeholder here reads as broken to anyone who views source.
+-->
 
 ---
 
 # Let's Build Something Useful
 
-I'm interested in **full-stack, frontend, and software development opportunities** where thoughtful interfaces, reliable systems, and good engineering practices matter.
+I'm interested in full-stack and frontend roles where **performance-sensitive UI, offline-first architecture, or framework-agnostic tooling** matter — and where thoughtful interfaces and reliable systems are treated as real engineering, not an afterthought.
 
-**[mnix.dev](https://mnix.dev)** · **[Journey to Code](https://journeytocode.io)** · **[LinkedIn](https://linkedin.com/in/mnix-dev)**
+**[Portfolio](https://mnix.dev)** · **[Journey to Code](https://journeytocode.io)** · **[LinkedIn](https://linkedin.com/in/mnix-dev)** · **[Codepen](https://codepen.io/mnichols08)**
 
 <br>
 <picture width="100%">
