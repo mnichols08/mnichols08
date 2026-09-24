@@ -291,11 +291,6 @@ I write about the things I'm learning and building at **[Journey to Code](https:
 
 ### ✍️ Recent Articles
 <!-- BLOG-POST-LIST:START -->
-- [What a Long, Strange Trip...](https://journeytocode.io/what-a-long-strange-trip)
-- [From DOS to Desktop Disasters](https://journeytocode.io/from-dos-to-desktop-disasters)
-- [The Future of Web Components](https://journeytocode.io/the-future-of-web-components)
-- [Advanced Patterns &amp; Integration with Frameworks](https://journeytocode.io/advanced-patterns-and-integration-with-frameworks)
-- [Real-World Examples &amp; Patterns in Web Components](https://journeytocode.io/real-world-examples-and-patterns-in-web-components)
 <!-- BLOG-POST-LIST:END -->
 
 <br>
