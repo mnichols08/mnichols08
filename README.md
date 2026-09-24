@@ -313,14 +313,11 @@ I write about the things I'm learning and building at **[Journey to Code](https:
 * **[Mastering the Web Audio API](https://journeytocode.io/series/complete-web-audio-api-tutorial)** — Exploring creative coding, spatial audio, synthesis, and processing directly in the browser.
 * **[Coding Patterns Demystified](https://journeytocode.io/coding-patterns-demystified)** — A Deep Dive into the Model-View-Controller (MVC) Pattern shipping code.
 
-<!--
+
 ### ✍️ Recent Articles
 > Automatically synchronized from journeytocode.io via GitHub Actions.
-BLOG-POST-LIST:START
-BLOG-POST-LIST:END
-Re-enable this block once the sync Action is confirmed running — an empty
-placeholder here reads as broken to anyone who views source.
--->
+<!-- BLOG-POST-LIST:START -->
+<!-- BLOG-POST-LIST:END -->
 
 ---
 
