@@ -21,10 +21,6 @@ jobs:
           committer_branch: output
           base: header, activity, community, repositories, metadata
           config_timezone: America/New_York
-          # TEMP: surfaces plugin failures (e.g. rate limits) as real Action
-          # errors instead of silently rendering an empty section. Remove
-          # once the languages section is confirmed working again.
-          plugins_errors_fatal: yes
           plugin_languages: yes
           plugin_languages_analysis_timeout: 15
           plugin_languages_categories: markup, programming
@@ -56,9 +52,6 @@ jobs:
             body { background-color: #111111 !important; }
 
       # ---------- MAIN METRICS (LIGHT) ----------
-      # `delay` gives the GitHub API a breather before this second full
-      # language-stats fetch fires, to avoid tripping secondary rate limits
-      # from two heavy queries back-to-back on the same token.
       - name: Generate main metrics (light)
         uses: lowlighter/metrics@latest
         with:
@@ -67,9 +60,6 @@ jobs:
           committer_branch: output
           base: header, activity, community, repositories, metadata
           config_timezone: America/New_York
-          delay: 30
-          # TEMP: see note on the dark step above.
-          plugins_errors_fatal: yes
           plugin_languages: yes
           plugin_languages_analysis_timeout: 15
           plugin_languages_categories: markup, programming
