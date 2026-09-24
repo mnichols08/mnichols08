@@ -205,7 +205,9 @@ I also spend a lot of time exploring **Web Components**, progressive web applica
 
 # Selected Work
 
-### 🌱 [Sprout](https://mnix.dev/projects/sprout)
+> *Click any project title below to read its full case study.*
+
+### 🌱 [Sprout (Read Case Study →)](https://mnix.dev/projects/sprout)
 
 **Financial Literacy Platform · Full-Stack · Team Practicum**
 
@@ -219,7 +221,7 @@ A financial-literacy application for people learning to manage their first paych
 
 ---
 
-### 🥫 [Kitchen Inventory](https://mnix.dev/projects/kitchen-inventory)
+### 🥫 [Kitchen Inventory (Read Case Study →)](https://mnix.dev/projects/kitchen-inventory)
 
 **Full-Stack Inventory Application · Individual Capstone**
 
@@ -233,7 +235,7 @@ Built the inventory interface, persistence layer, serverless Airtable integratio
 
 ---
 
-### ✅ [React Todo App](https://github.com/mnichols08/ctd-react-v3-guided-project)
+### ✅ [React Todo App (Read Case Study →)](https://mnix.dev/projects/ctd-todo-app)
 
 **React Application · State Management · Automated Testing**
 
@@ -247,7 +249,7 @@ The project grew beyond a basic CRUD exercise into an exploration of **reducers,
 
 ---
 
-### 💵 [Drawer Count](https://mnix.dev/projects/drawer-count)
+### 💵 [Drawer Count (Read Case Study →)](https://mnix.dev/projects/drawer-count)
 
 **Installable PWA · Web Components**
 
