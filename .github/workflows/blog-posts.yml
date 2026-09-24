@@ -16,4 +16,4 @@ jobs:
       - name: Pull in posts
         uses: gautamkrishnar/blog-post-workflow@v1
         with:
-          feed_list: "YOUR_RSS_FEED_URL"
+          feed_list: "https://journeytocode.io/rss.xml"
