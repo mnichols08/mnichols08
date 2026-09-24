@@ -4,6 +4,10 @@ on:
     - cron: '0 * * * *'
   workflow_dispatch:
 
+# Grant GitHub Actions permissions to update repository contents
+permissions:
+  contents: write
+
 jobs:
   update-readme-with-blog:
     name: Update this repo's README with latest blog posts
@@ -13,6 +17,6 @@ jobs:
       - uses: gautamkrishnar/blog-post-workflow@v1
         with:
           feed_list: "https://journeytocode.io/rss.xml"
-          # Defines the custom markdown structure for each item:
           template: "$newline- [$title]($url) — $description"
-          description_max_length: 140
+          description_max_length: 120
+          max_post_count: 5
