@@ -169,9 +169,6 @@ I'm currently expanding into **Rust and WebAssembly** — exploring how Rust can
 </p>
 
 ---
-
-# GitHub Metrics
-
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mnichols08/mnichols08/output/metrics-dark.svg">
@@ -183,6 +180,12 @@ I'm currently expanding into **Rust and WebAssembly** — exploring how Rust can
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mnichols08/mnichols08/output/metrics.isocalendar-dark.svg">
     <img src="https://raw.githubusercontent.com/mnichols08/mnichols08/output/metrics.isocalendar.svg" alt="Isometric Commit Calendar">
+  </picture>
+</p>
+
+<p align="center">
+  <picture>
+    <img src="https://raw.githubusercontent.com/mnichols08/mnichols08/output/constellation.svg" alt="My Custom Constellation Graph" >
   </picture>
 </p>
 
