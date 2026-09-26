@@ -3,7 +3,7 @@
 name: Daily constellation
 on:
   schedule:
-    - cron: '17 6 * * *'
+    - cron: '0 0 * * *'
   workflow_dispatch:
 permissions:
   contents: write
@@ -17,35 +17,23 @@ jobs:
       - uses: actions/checkout@v4
       - uses: mnichols08/constellation@main
         with:
-          username: 'mnichols08'
+          username: ${{ github.repository_owner }}
           token: ${{ secrets.GITHUB_TOKEN }}
           output: constellation.svg
           publish: 'true'
           output-branch: output
           config-json: |
             {
-              "layout": "compact",
-              "title": "mnix / a small universe of code",
-              "animate": true,
-              "maxRepos": 24,
-              "includeForks": false,
-              "connectionDensity": "all",
-              "bridges": false,
-              "showOther": false,
-              "includeRepos": [
-                "drawer-count-app",
-                "kitchen-inventory-app",
-                "ctd-react-v3-final",
-                "ctd-react-v3-guided-project",
-                "web-components",
-                "WebComponentAccesibility",
-                "wcl",
-                "breather",
-                "tick-it",
-                "rust-swing-or-cast",
-                "open.CRM",
-                "banking-app"
-              ],
               "theme": "auto",
-              "css": "/* Visual controls: light palette, then the viewer’s dark preference. */\nsvg {\n  --sky-background: #F5F4E6;\n  --sky-foreground: #111111;\n  --sky-accent: #827F2B;\n  --sky-line: #AAA66D;\n  --sky-star: #827F2B;\n}\n@media (prefers-color-scheme: dark) {\n  svg {\n    --sky-background: #111111;\n    --sky-foreground: #FFFFFF;\n    --sky-accent: #E3DE13;\n    --sky-line: #77743B;\n    --sky-star: #E3DE13;\n  }\n}\n.connections { stroke-width: 0.9; opacity: 0.8; }\n.shared-language[data-emphasis=\"secondary\"] { opacity: 0.13; }\n.bridges { stroke-width: 0.9; opacity: 0.35; }\n.star { filter: drop-shadow(0 0 1.5px var(--sky-star)); }\n.dust { opacity: 0.35; }\n.language text, .repo-label { font-size: 11px; }\n.language, .repo-label { display: inline; }\n.star-halo { opacity: .06; }\n.repo-label { opacity: .8; }\n.credit { opacity: .8; }"
+              "layout": "compact",
+              "maxRepos": 20,
+              "animate": true,
+              "includeForks": true,
+              "bridges": false,
+              "connectionDensity": "balanced",
+              "connectionBasis": "both",
+              "languages": null,
+              "topics": null,
+              "showOther": false,
+              "css": "/* Visual controls: light palette, then the viewer’s dark preference. */\nsvg {\n  --sky-background: #f7f8fc;\n  --sky-foreground: #18213a;\n  --sky-accent: #395bbe;\n  --sky-line: #aab6d3;\n  --sky-star: #966500;\n}\n@media (prefers-color-scheme: dark) {\n  svg {\n    --sky-background: #080e20;\n    --sky-foreground: #e6edff;\n    --sky-accent: #9ab9ff;\n    --sky-line: #3e537e;\n    --sky-star: #f6d99b;\n  }\n}\n.connections { stroke-width: 0.9; opacity: 0.8; }\n.shared-language[data-emphasis=\"secondary\"] { opacity: 0.16; }\n.bridges { stroke-width: 0.9; opacity: 0.45; }\n.star { filter: drop-shadow(0 0 1px var(--sky-star)); }\n.dust { opacity: 0.95; }\n.language text, .repo-label { font-size: 9px; }\n.language, .repo-label { display: inline; }\n/* Light: cream and olive */\nsvg {\n  --sky-background: #F5F4E6;\n  --sky-foreground: #111111;\n  --sky-accent: #827F2B;\n  --sky-line: #AAA66D;\n  --sky-star: #827F2B;\n}\n\n/* Dark: charcoal and yellow */\n@media (prefers-color-scheme: dark) {\n  svg {\n    --sky-background: #111111;\n    --sky-foreground: #FFFFFF;\n    --sky-accent: #E3DE13;\n    --sky-line: #77743B;\n    --sky-star: #E3DE13;\n  }\n}\n\n.connections {\n  stroke-width: 0.9;\n  opacity: 0.8;\n}\n\n.shared-language[data-emphasis=\"secondary\"] {\n  opacity: 0.13;\n}\n\n.star {\n  filter: drop-shadow(0 0 1.5px var(--sky-star));\n}\n\n.star-halo { opacity: 0.06; }\n.dust { opacity: 0.35; }\n.repo-label { font-size: 11px; opacity: 0.8; }\n.credit { opacity: 0.8; }\n.generated-at { opacity: 0.6; }"
             }
