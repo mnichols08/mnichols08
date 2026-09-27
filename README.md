@@ -183,11 +183,7 @@ I'm currently expanding into **Rust and WebAssembly** — exploring how Rust can
   </picture>
 </p>
 
-<p align="center">
-  <picture>
-    <img src="https://raw.githubusercontent.com/mnichols08/mnichols08/output/constellation.svg" alt="My Custom Constellation Graph" >
-  </picture>
-</p>
+[![My GitHub constellation](https://raw.githubusercontent.com/mnichols08/mnichols08/output/constellation.svg)](https://github.com/mnichols08/constellation)
 
 ---
 
