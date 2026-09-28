@@ -15,25 +15,224 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: mnichols08/constellation@main
+      - uses: mnichols08/constellation@v3
         with:
-          username: ${{ github.repository_owner }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-          output: constellation.svg
           publish: 'true'
-          output-branch: output
           config-json: |
             {
               "theme": "auto",
+              "visualTheme": "mnix",
               "layout": "compact",
               "maxRepos": 25,
-              "animate": true,
+              "repoSource": "all",
+              "nodeMode": "topics",
+              "nodeSize": "uniform",
+              "nodeColorMode": "language",
+              "showOther": true,
+              "includeArchived": true,
               "includeForks": false,
-              "bridges": true,
-              "connectionDensity": "all",
-              "connectionBasis": "both",
+              "minStars": 0,
+              "animate": true,
+              "starlightAnimate": true,
+              "identityRing": true,
+              "legend": false,
+              "connectionBasis": "languages",
+              "connectionDensity": "balanced",
+              "seedMode": "random",
+              "starfield": {
+                "mode": "milky-way",
+                "density": 100,
+                "brightness": 1,
+                "depth": 0.95,
+                "twinkle": true,
+                "seed": ""
+              },
+              "arrangement": "rings",
+              "accountType": "auto",
+              "organizationScope": "active",
+              "organizationView": "projects",
+              "organization": {
+                "contributors": {
+                  "enabled": true,
+                  "strategy": "representative",
+                  "maxRepositories": 100,
+                  "maxContributorsPerRepo": 25
+                },
+                "grouping": {
+                  "mode": "auto",
+                  "pattern": ""
+                }
+              },
+              "layers": {
+                "starfield": {
+                  "opacity": 1
+                },
+                "nodes": {
+                  "opacity": 1
+                }
+              },
+              "layoutRefinement": {
+                "enabled": false,
+                "intensity": 5
+              },
+              "history": {
+                "mode": "current",
+                "year": null,
+                "maxHistoricalFrames": 8,
+                "timeLapse": {
+                  "enabled": false,
+                  "duration": 16,
+                  "mode": "grow",
+                  "loop": true
+                }
+              },
+              "contributionOrbit": {
+                "enabled": false,
+                "period": "52w",
+                "granularity": "week",
+                "style": "dots",
+                "showCurrent": true,
+                "animate": true
+              },
+              "languageEvolution": {
+                "enabled": false,
+                "style": "eras",
+                "buckets": "automatic"
+              },
+              "stellarAges": {
+                "enabled": false,
+                "mode": "appearance",
+                "showArchivedRemnants": true,
+                "thresholds": {
+                  "newborn": 90,
+                  "active": 30,
+                  "mature": 365,
+                  "quiet": 180,
+                  "dormant": 365
+                }
+              },
+              "foreignGalaxies": {
+                "enabled": false,
+                "limit": 8,
+                "minimumContribution": "pr",
+                "layout": "outer"
+              },
+              "nodeGlowMode": "activity",
+              "connectionWeight": "uniform",
+              "majorMetric": "stars",
+              "seed": "i1rpqe-a6ty9j",
+              "nodeShape": "circle",
+              "effect": "none",
+              "activityEffect": "off",
+              "activityWindow": "7d",
+              "activityDetail": "simple",
+              "activityConnections": false,
+              "activityAnimate": true,
+              "codingRhythmStyle": "active-arc",
+              "codingRhythmWindow": "30d",
+              "codingRhythmTimezone": "UTC",
+              "codingRhythmDays": "subtle",
+              "codingRhythmAnimate": true,
+              "codingRhythmPeakLabel": true,
+              "updatedWithin": 0,
+              "repoQuery": "",
+              "sortBy": "stars",
+              "exportProfile": "custom",
+              "codingRhythm": true,
+              "bridges": false,
               "languages": null,
               "topics": null,
-              "showOther": false,
-              "css": "/* Visual controls: light palette, then the viewer’s dark preference. */\nsvg {\n  --sky-background: #2243c3;\n  --sky-foreground: #18213a;\n  --sky-accent: #395bbe;\n  --sky-line: #aab6d3;\n  --sky-star: #966500;\n}\n@media (prefers-color-scheme: dark) {\n  svg {\n    --sky-background: #080e20;\n    --sky-foreground: #e6edff;\n    --sky-accent: #9ab9ff;\n    --sky-line: #3e537e;\n    --sky-star: #f6d99b;\n  }\n}\n.connections { stroke-width: 0.9; opacity: 0.8; }\n.shared-language[data-emphasis=\"secondary\"] { opacity: 0.13; }\n.bridges { stroke-width: 0.9; opacity: 0.35; }\n.star { filter: drop-shadow(0 0 2px var(--sky-star)); }\n.dust { opacity: 0.6; }\n.language text, .repo-label { font-size: 9px; }\n.language, .repo-label { display: inline; }\n/* Light: cream and olive */\nsvg {\n  --sky-background: #F5F4E6;\n  --sky-foreground: #111111;\n  --sky-accent: #827F2B;\n  --sky-line: #AAA66D;\n  --sky-star: #827F2B;\n}\n\n/* Dark: charcoal and yellow */\n@media (prefers-color-scheme: dark) {\n  svg {\n    --sky-background: #111111;\n    --sky-foreground: #FFFFFF;\n    --sky-accent: #E3DE13;\n    --sky-line: #77743B;\n    --sky-star: #E3DE13;\n  }\n}\n\n.connections {\n  stroke-width: 0.9;\n  opacity: 0.8;\n}\n\n.shared-language[data-emphasis=\"secondary\"] {\n  opacity: 0.13;\n}\n\n.star {\n  filter: drop-shadow(0 0 1.5px var(--sky-star));\n}\n\n.star-halo { opacity: 0.06; }\n.dust { opacity: 0.35; }\n.repo-label { font-size: 11px; opacity: 0.8; }\n.credit { opacity: 0.8; }\n.generated-at { opacity: 0.6; }"
+              "css": "/* Visual controls: light palette, then the viewer’s dark preference. */\nsvg {\n  --sky-background: #fafaf3;\n  --sky-foreground: #202516;\n  --sky-accent: #595600;\n  --sky-line: #838d66;\n  --sky-star: #8b8500;\n}\n@media (prefers-color-scheme: dark) {\n  svg {\n    --sky-background: #111111;\n    --sky-foreground: #f3f3f4;\n    --sky-accent: #e3de13;\n    --sky-line: #555a38;\n    --sky-star: #e3de13;\n  }\n}\n.connections { stroke-width: 1; opacity: 0.65; }\n.shared-language[data-emphasis=\"secondary\"] { opacity: 0.26; }\n.bridges { stroke-width: 1; opacity: 0.3; }\n.star { filter: drop-shadow(0 0 3.5px var(--node-color,var(--sky-star))); }\n.dust { opacity: 0.95; }\n.language text, .repo-label { font-size: 11px; }\n.language, .repo-label { display: inline; }\n",
+              "visualStyle": {
+                "light": {
+                  "background": "#fafaf3",
+                  "foreground": "#202516",
+                  "accent": "#595600",
+                  "line": "#838d66",
+                  "star": "#8b8500"
+                },
+                "dark": {
+                  "background": "#111111",
+                  "foreground": "#f3f3f4",
+                  "accent": "#e3de13",
+                  "line": "#555a38",
+                  "star": "#e3de13"
+                },
+                "lineWidth": 1,
+                "lineOpacity": 0.65,
+                "secondaryOpacity": 0.26,
+                "bridgeOpacity": 0.3,
+                "glow": 3.5,
+                "dustOpacity": 0.95,
+                "labelSize": 11,
+                "labels": true
+              },
+              "customCSS": "",
+              "ringAnimation": {
+                "enabled": true,
+                "linked": true,
+                "speeds": [
+                  0.75,
+                  0.75,
+                  0.75,
+                  0.75
+                ],
+                "directions": [
+                  "counterclockwise",
+                  "counterclockwise",
+                  "counterclockwise",
+                  "counterclockwise"
+                ],
+                "modes": [
+                  "spin",
+                  "spin",
+                  "spin",
+                  "spin"
+                ],
+                "easing": [
+                  "smooth",
+                  "smooth",
+                  "smooth",
+                  "smooth"
+                ],
+                "amplitudes": [
+                  100,
+                  100,
+                  100,
+                  100
+                ]
+              },
+              "perspective": {
+                "enabled": false,
+                "animate": true,
+                "horizontal": 0,
+                "vertical": 25,
+                "zoom": 90,
+                "range": 25,
+                "duration": 46
+              },
+              "floatingAnimation": {
+                "enabled": true,
+                "mode": "orbit",
+                "amplitude": 6,
+                "duration": 27
+              },
+              "ringRotations": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "snapToRings": true,
+              "hiddenNodes": [],
+              "hiddenLabels": [],
+              "colorConnections": false,
+              "nodeColors": {},
+              "labelOffsets": {},
+              "starPositions": {},
+              "selection": {
+                "start": null,
+                "end": null
+              },
+              "version": 7
             }
