@@ -37,15 +37,20 @@
 
 # About Me
 
-I'm a **full-stack developer** building web applications with JavaScript, React, Node.js, APIs, and modern browser technologies.
+I build web applications, from the interface and API to the tests that check how they work together.
 
-I enjoy building the feature, but I'm equally interested in the engineering around it: **testing, accessibility, authentication, application architecture, deployment, debugging, and making frontend and backend systems work well together.**
+I'm drawn to the engineering around the feature as much as the feature itself — **testing, accessibility, authentication, application architecture, deployment, and making frontend and backend systems work well together.**
 
-I'm currently expanding into **Rust and WebAssembly** — exploring how Rust can manage compute-intensive domain logic while native Web Components render high-performance user interfaces. I'm particularly drawn to teams building performance-sensitive frontend tooling, offline-first applications, and framework-agnostic UI architecture.
+Right now I'm pushing into **Rust and WebAssembly** — using WASM for compute-heavy domain logic behind native Web Component UIs with no framework in the render path. I write about what I learn at **[Journey to Code](https://journeytocode.io)**.
 
 ---
 
 # Technical Stack
+
+<details>
+<summary><strong>Core technologies &amp; tools</strong></summary>
+
+Core: **JavaScript · React · Node.js · Web Components · Rust/WebAssembly · Playwright**
 
 ## Frontend
 
@@ -168,7 +173,13 @@ I'm currently expanding into **Rust and WebAssembly** — exploring how Rust can
   </picture>
 </p>
 
+</details>
+
 ---
+
+<details open>
+<summary><strong>GitHub metrics &amp; project constellation</strong></summary>
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mnichols08/mnichols08/output/metrics-dark.svg">
@@ -185,118 +196,145 @@ I'm currently expanding into **Rust and WebAssembly** — exploring how Rust can
 
 [![My GitHub constellation](https://raw.githubusercontent.com/mnichols08/mnichols08/output/constellation.svg)](https://github.com/mnichols08/constellation)
 
+</details>
+
 ---
 
 # Selected Work
 
-> *Click any project title below to read its full case study.*
+<details>
+<summary><strong>Seven featured projects</strong></summary>
 
-### 🌱 [Sprout (Read Case Study →)](https://mnix.dev/projects/sprout)
+> _Seven projects, matching the Featured work on my portfolio. Each case study has the project context, my contributions, and engineering notes._
 
-**Financial Literacy Platform · Full-Stack · Team Practicum**
+### ✨ [Constellation · Case study](https://mnix.dev/projects/constellation)
 
-* **Architecture & Lead:** Co-Project Lead and Testing Lead — set security practices and led CI test automation across front- and back-end modules.
-* **Testing Strategy:** Maintained 85%+ code coverage on critical authentication and ledger endpoints. *(Full breakdown in the case study →)*
+_In development._ Turns GitHub repositories into interactive project maps and README-ready SVGs.
 
-`React` `Node.js` `Express` `MongoDB` `JavaScript` `OAuth` `Automated Testing`
+<details>
+<summary>Build notes &amp; technologies</summary>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/09001eee-7ee8-47ba-8104-1d3f734bee57/deploy-status)](https://app.netlify.com/projects/sprout-ctd/deploys)
+I built a shared Rust graph engine for the browser, command line, and GitHub Action, alongside an accessible web-component Studio.
 
----
+`Rust` `WebAssembly` `Web Components` `SVG` `GitHub Actions`
 
-### 🥫 [Kitchen Inventory (Read Case Study →)](https://mnix.dev/projects/kitchen-inventory)
-
-**Full-Stack Inventory Application · Individual Capstone**
-
-* **Data Management:** Optimistic UI state synced against a serverless backend, keeping the frontend responsive under network latency.
-* **Resiliency & Search:** Client-side caching, search indexing, and expiration-alert logic, all covered by unit tests.
-
-`React` `Vite` `Airtable` `Vitest` `JavaScript`
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/44d04d6d-6f2b-4483-acca-8f01a3c59876/deploy-status)](https://app.netlify.com/projects/ctd-react-final/deploys)
+</details>
 
 ---
 
-### ✅ [React Todo App (View Project Repo →)](https://github.com/mnichols08/ctd-react-v3-guided-project)
+### 📝 [Readme Studio · Case study](https://mnix.dev/projects/readme-studio)
 
-**React Application · State Management · Automated Testing**
+_In development._ A browser-based GitHub profile README editor with editable sections, Markdown import and export, and a live preview.
 
-* **Advanced Patterns:** Scalable state orchestration using `useReducer`, Context API, persistent storage adapters, and custom hooks.
-* **Comprehensive Testing:** Test suites covering async network interactions, pagination, and error boundaries.
+<details>
+<summary>Build notes &amp; technologies</summary>
 
-`React` `Vite` `React Router` `Context API` `useReducer` `Airtable` `Vitest` `React Testing Library`
+Built with native Web Components and local drafts, with optional WebAssembly analysis.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/8083f6e0-5126-4a73-aacd-8e311dcd1e05/deploy-status)](https://app.netlify.com/projects/ctd-v3-react-guided-project/deploys)
+`JavaScript` `Web Components` `WebAssembly` `PWA` `Playwright`
+
+</details>
 
 ---
 
-### 💵 [Drawer Count (Read Case Study →)](https://mnix.dev/projects/drawer-count)
+### 📚 [open.quiz · Case study](https://mnix.dev/projects/open-quiz)
 
-**Installable PWA · Web Components**
+An open-source, self-hostable learning platform that I independently evolved from Sprout.
 
-* **Zero-Framework Architecture:** Built with vanilla Web Components (`Custom Elements`, `Shadow DOM`) for minimal bundle footprint.
-* **Offline First:** Custom Service Worker caching and `IndexedDB` persistence for offline cash-drawer auditing.
+<details>
+<summary>Build notes &amp; technologies</summary>
+
+I built modular curricula, administrator-managed themes and content packages, and a single-service React and Express deployment.
+
+`React` `Node.js` `Express` `MongoDB` `Playwright`
+
+</details>
+
+---
+
+### 🗺️ [Garrett County Adventures · Case study](https://mnix.dev/projects/gc-adventures)
+
+_In development._ A local-first trip-planning site for Garrett County, Maryland.
+
+<details>
+<summary>Build notes &amp; technologies</summary>
+
+I built a framework-free TypeScript explorer, local Rust/WebAssembly GPX analysis, saved outings, and a Markdown-to-guide publishing pipeline.
+
+`TypeScript` `Rust` `WebAssembly` `OpenStreetMap` `PWA`
+
+</details>
+
+---
+
+### 💵 [Drawer Count · Case study](https://mnix.dev/projects/drawer-count)
+
+An installable cash-drawer calculator for repeat counts and daily records.
+
+<details>
+<summary>Build notes &amp; technologies</summary>
+
+I built the counting interface as a Custom Element with Shadow DOM and custom events, then added on-device storage and offline caching.
 
 `JavaScript` `Web Components` `PWA` `Service Workers`
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a57448fd-9c4c-4da9-b7ba-bc38ab8f37df/deploy-status)](https://app.netlify.com/projects/drawer-count/deploys)
+</details>
 
 ---
 
-# What I'm Exploring
+### 🥫 [Kitchen Inventory · Case study](https://mnix.dev/projects/kitchen-inventory)
 
-Pushing further into **Rust and WebAssembly**, using WASM for compute-heavy domain logic behind native Web Component UIs — no framework in the render path.
+My individual capstone: a React app for tracking food, expiration dates, and shopping needs.
 
 <details>
-<summary><b>🛠️ View Native Web Component Example</b></summary>
+<summary>Build notes &amp; technologies</summary>
 
-```javascript
-import init, { calculate_inventory_forecast } from './pkg/wasm_calc_inv_forecast.js';
+I built the inventory flows, routed Airtable requests through a serverless function, and added local persistence.
 
-// Minimal Framework-free Encapsulated UI Component
-class MnixMetricCard extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-  }
+`React` `Vite` `Airtable` `Netlify Functions`
 
-  async connectedCallback() {
-    await init(); // Initialize WebAssembly module
+</details>
 
-    const stock = parseFloat(this.getAttribute('stock')) || 0;
-    const usage = parseFloat(this.getAttribute('daily-usage')) || 0;
-    
-    // Execute high-performance Rust logic via WASM
-    const daysLeft = calculate_inventory_forecast(usage, stock);
+---
 
-    this.shadowRoot.innerHTML = `
-      <style>
-        :host { display: block; font-family: monospace; border: 1px solid #333; padding: 1rem; border-radius: 6px; }
-        .val { font-size: 1.5rem; font-weight: bold; color: #E3DE13; }
-      </style>
+### ✅ [CTD Todo App · Case study](https://mnix.dev/projects/ctd-todo-app)
 
-      <div>
-        <small>Inventory Forecast (via WASM)</small>
-        <div class="val">${daysLeft === Infinity ? 'N/A' : daysLeft + ' days'}</div>
-      </div>
-    `;
-  }
-}
+An extended Code the Dream guided project: a React task manager with Airtable-backed tasks and searchable, sortable lists.
 
-customElements.define('mnix-metric-card', MnixMetricCard);
-```
+<details>
+<summary>Build notes &amp; technologies</summary>
+
+I added optimistic updates with rollback, caching, and regression tests for failures and keyboard interactions.
+
+`React` `Airtable` `Vite` `Vitest` `React Testing Library`
+
+</details>
+
+</details>
+
+---
+
+# Current Build: Swing or Cast
+
+**[Swing or Cast](https://mnix.dev/projects/swing-or-cast)** is an in-development browser RPG where each expedition risks permanent character death. A shared Rust game core powers both the server and a WebAssembly adapter for the browser, keeping combat and progression rules consistent. [Try the live demo](https://swing-or-cast.journeytocode.io/) · [View the source](https://github.com/mnichols08/rust-swing-or-cast).
+
+<details>
+<summary>⚔️ See how the Rust game reaches the browser</summary>
+
+The WebAssembly adapter applies an action to the Rust game, then returns an updated snapshot to the JavaScript interface:
 
 ```rust
-use wasm_bindgen::prelude::*;
+pub fn venture(&mut self) -> Result<JsValue, JsValue> {
+    self.game.venture().map_err(js_error)?;
+    self.snapshot()
+}
 
-#[wasm_bindgen]
-pub fn calculate_inventory_forecast(daily_usage: f64, stock: f64) -> f64 {
-    if daily_usage <= 0.0 {
-        return f64::INFINITY;
-    }
-    (stock / daily_usage).floor()
+pub fn snapshot(&self) -> Result<JsValue, JsValue> {
+    serde_wasm_bindgen::to_value(&self.game.snapshot()).map_err(js_error)
 }
 ```
+
+[See the full WebAssembly adapter](https://github.com/mnichols08/rust-swing-or-cast/blob/development/crates/game-wasm/src/lib.rs).
 </details>
 
 ---
@@ -305,35 +343,46 @@ pub fn calculate_inventory_forecast(daily_usage: f64, stock: f64) -> f64 {
 
 I write about the things I'm learning and building at **[Journey to Code](https://journeytocode.io)**. Topics include JavaScript, Web Components, Git, application architecture, project walkthroughs, and experiments worth understanding beyond just getting the code to work.
 
-### 📚 Featured Series
-* **[Commit to Success: Mastering Git](https://journeytocode.io/series/learn-git-from-basics-to-advanced)** — Moving beyond basic commands to master version control, branches, merging, and real-world collaboration.
-* **[Journey to Web Components](https://journeytocode.io/series/web-components-fundamentals-to-advanced)** — Building reusable UI architecture without heavy frameworks using Custom Elements, Shadow DOM, and native browser APIs.
-* **[Mastering the Fetch API & Browser Storage](https://journeytocode.io/series/mastering-fetch-api-browser-storage)** — Network requests, client-side persistence (IndexedDB, Cache API), and resilient offline-first design.
-* **[Mastering the Web Audio API](https://journeytocode.io/series/complete-web-audio-api-tutorial)** — Exploring creative coding, spatial audio, synthesis, and processing directly in the browser.
-* **[Coding Patterns Demystified](https://journeytocode.io/coding-patterns-demystified)** — A Deep Dive into the Model-View-Controller (MVC) Pattern shipping code.
+<details open>
+<summary>📚 Featured series</summary>
 
+- **[Commit to Success: Mastering Git](https://journeytocode.io/series/learn-git-from-basics-to-advanced)** — Moving beyond basic commands to master version control, branches, merging, and real-world collaboration.
+- **[Journey to Web Components](https://journeytocode.io/series/web-components-fundamentals-to-advanced)** — Building reusable UI architecture without heavy frameworks using Custom Elements, Shadow DOM, and native browser APIs.
+- **[Mastering the Fetch API & Browser Storage](https://journeytocode.io/series/mastering-fetch-api-browser-storage)** — Network requests, client-side persistence (IndexedDB, Cache API), and resilient offline-first design.
+- **[Mastering the Web Audio API](https://journeytocode.io/series/complete-web-audio-api-tutorial)** — Exploring creative coding, spatial audio, synthesis, and processing directly in the browser.
+- **[Coding Patterns Demystified](https://journeytocode.io/coding-patterns-demystified)** — A Deep Dive into the Model-View-Controller (MVC) Pattern shipping code.
+</details>
 
-### ✍️ Recent Articles
+<details open>
+<summary>✍️ Recent articles</summary>
+
 > Automatically synchronized from journeytocode.io via GitHub Actions.
+
 <!-- BLOG-POST-LIST:START -->
+
 - [What a Long, Strange Trip...](https://journeytocode.io/what-a-long-strange-trip) — The last time I posted was on April 28, 2025. I know the exact date because it was the same day I got married.
-Looking b...
+  Looking b...
 - [From DOS to Desktop Disasters](https://journeytocode.io/from-dos-to-desktop-disasters) — I grew up as the youngest offspring of one particularly tech-savvy individual who among many jobs, initially moved our f...
 - [The Future of Web Components](https://journeytocode.io/the-future-of-web-components) — Web Components have come a long way since their introduction, evolving from a niche standard to a cornerstone of modern...
 - [Advanced Patterns &amp; Integration with Frameworks](https://journeytocode.io/advanced-patterns-and-integration-with-frameworks) — Web Components promise the holy grail of front-end development: truly reusable, framework-agnostic components that work...
 - [Real-World Examples &amp; Patterns in Web Components](https://journeytocode.io/real-world-examples-and-patterns-in-web-components) — In today&#39;s diverse front-end landscape, Web Components stand out as a platform-native solution for creating reusable UI...<!-- BLOG-POST-LIST:END -->
+</details>
 
 ---
 
-# Let's Build Something Useful
+# Open to Roles
 
-I'm interested in full-stack and frontend roles where **performance-sensitive UI, offline-first architecture, or framework-agnostic tooling** matter — and where thoughtful interfaces and reliable systems are treated as real engineering, not an afterthought.
+Looking for full-stack and frontend positions where **performance, offline-first design, and framework-agnostic UI** are taken seriously.
 
-**[Portfolio](https://mnix.dev)** · **[Journey to Code](https://journeytocode.io)** · **[LinkedIn](https://linkedin.com/in/mnix-dev)** · **[Codepen](https://codepen.io/mnichols08)**
+**[Portfolio](https://mnix.dev)** · **[Journey to Code](https://journeytocode.io)** · **[LinkedIn](https://linkedin.com/in/mnix-dev)** · **[Resume](https://mnix.dev/file/mnichols-cv.pdf)**
 
 <br>
+<details>
+<summary>Please don't mind me, just feeding my snake down here...</summary>
+
 <picture width="100%">
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mnichols08/mnichols08/output/github-snake-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/mnichols08/mnichols08/output/github-snake.svg">
   <img alt="GitHub contribution snake" src="github-snake.svg">
 </picture>
+</details>
