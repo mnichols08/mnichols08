@@ -47,10 +47,10 @@ Right now I'm pushing into **Rust and WebAssembly** — using WASM for compute-h
 
 # Technical Stack
 
-<details>
-<summary><strong>Core technologies &amp; tools</strong></summary>
+Core: **JavaScript · TypeScript · React · Node.js · Express · Web Components · Rust/WebAssembly**
 
-Core: **JavaScript · React · Node.js · Web Components · Rust/WebAssembly · Playwright**
+<details>
+<summary><strong>Full stack &amp; tooling</strong></summary>
 
 ## Frontend
 
@@ -203,9 +203,7 @@ Core: **JavaScript · React · Node.js · Web Components · Rust/WebAssembly · 
 # Selected Work
 
 <details>
-<summary><strong>Seven featured projects</strong></summary>
-
-> _Seven projects, matching the Featured work on my portfolio. Each case study has the project context, my contributions, and engineering notes._
+<summary><strong>Seven featured projects — each links to a full case study on mnix.dev</strong></summary>
 
 ### ✨ [Constellation · Case study](https://mnix.dev/projects/constellation)
 
@@ -239,7 +237,7 @@ Built with native Web Components and local drafts, with optional WebAssembly ana
 
 ### 📚 [open.quiz · Case study](https://mnix.dev/projects/open-quiz)
 
-An open-source, self-hostable learning platform that I independently evolved from Sprout.
+An open-source, self-hostable learning platform independently evolved from Sprout.
 
 <details>
 <summary>Build notes &amp; technologies</summary>
@@ -299,7 +297,7 @@ I built the inventory flows, routed Airtable requests through a serverless funct
 
 ### ✅ [CTD Todo App · Case study](https://mnix.dev/projects/ctd-todo-app)
 
-An extended Code the Dream guided project: a React task manager with Airtable-backed tasks and searchable, sortable lists.
+A React task manager with Airtable-backed tasks and searchable, sortable lists — extended from a Code the Dream guided project.
 
 <details>
 <summary>Build notes &amp; technologies</summary>
@@ -316,55 +314,68 @@ I added optimistic updates with rollback, caching, and regression tests for fail
 
 # Current Build: Swing or Cast
 
-**[Swing or Cast](https://mnix.dev/projects/swing-or-cast)** is an in-development browser RPG where each expedition risks permanent character death. A shared Rust game core powers both the server and a WebAssembly adapter for the browser, keeping combat and progression rules consistent. [Try the live demo](https://swing-or-cast.journeytocode.io/) · [View the source](https://github.com/mnichols08/rust-swing-or-cast).
+**[Swing or Cast](https://mnix.dev/projects/swing-or-cast)** is an in-development browser RPG where each expedition risks permanent character death. A shared Rust game core powers both the server and a WebAssembly adapter for the browser, keeping combat and progression rules identical on both sides. [Try the live demo](https://swing-or-cast.journeytocode.io/) · [View the source](https://github.com/mnichols08/rust-swing-or-cast)
 
 <details>
-<summary>⚔️ See how the Rust game reaches the browser</summary>
+<summary>⚔️ See how the Rust game core reaches the browser</summary>
 
-The WebAssembly adapter applies an action to the Rust game, then returns an updated snapshot to the JavaScript interface:
+The `GameWasm` struct wraps the core game and exposes it to JavaScript. Each method applies an action through the Rust engine, then serializes the updated state back to the browser:
 
 ```rust
-pub fn venture(&mut self) -> Result<JsValue, JsValue> {
-    self.game.venture().map_err(js_error)?;
-    self.snapshot()
+use wasm_bindgen::prelude::*;
+
+#[wasm_bindgen]
+pub struct GameWasm {
+    game: Game,
 }
 
-pub fn snapshot(&self) -> Result<JsValue, JsValue> {
-    serde_wasm_bindgen::to_value(&self.game.snapshot()).map_err(js_error)
+#[wasm_bindgen]
+impl GameWasm {
+    pub fn venture(&mut self) -> Result<JsValue, JsValue> {
+        self.game.venture().map_err(js_error)?;
+        self.snapshot()
+    }
+
+    pub fn snapshot(&self) -> Result<JsValue, JsValue> {
+        serde_wasm_bindgen::to_value(&self.game.snapshot()).map_err(js_error)
+    }
 }
 ```
 
-[See the full WebAssembly adapter](https://github.com/mnichols08/rust-swing-or-cast/blob/development/crates/game-wasm/src/lib.rs).
+[See the full WebAssembly adapter →](https://github.com/mnichols08/rust-swing-or-cast/blob/development/crates/game-wasm/src/lib.rs)
+
 </details>
 
 ---
 
 # Technical Writing
 
-I write about the things I'm learning and building at **[Journey to Code](https://journeytocode.io)**. Topics include JavaScript, Web Components, Git, application architecture, project walkthroughs, and experiments worth understanding beyond just getting the code to work.
+I write at **[Journey to Code](https://journeytocode.io)** about the things I'm building and learning — JavaScript, Web Components, Git, application architecture, and experiments worth understanding beyond just getting the code to work.
 
-<details open>
+<details>
 <summary>📚 Featured series</summary>
 
 - **[Commit to Success: Mastering Git](https://journeytocode.io/series/learn-git-from-basics-to-advanced)** — Moving beyond basic commands to master version control, branches, merging, and real-world collaboration.
 - **[Journey to Web Components](https://journeytocode.io/series/web-components-fundamentals-to-advanced)** — Building reusable UI architecture without heavy frameworks using Custom Elements, Shadow DOM, and native browser APIs.
 - **[Mastering the Fetch API & Browser Storage](https://journeytocode.io/series/mastering-fetch-api-browser-storage)** — Network requests, client-side persistence (IndexedDB, Cache API), and resilient offline-first design.
 - **[Mastering the Web Audio API](https://journeytocode.io/series/complete-web-audio-api-tutorial)** — Exploring creative coding, spatial audio, synthesis, and processing directly in the browser.
-- **[Coding Patterns Demystified](https://journeytocode.io/coding-patterns-demystified)** — A Deep Dive into the Model-View-Controller (MVC) Pattern shipping code.
+- **[Coding Patterns Demystified](https://journeytocode.io/coding-patterns-demystified)** — A deep dive into the Model-View-Controller pattern with shipping code.
+
 </details>
 
-<details open>
+<details>
 <summary>✍️ Recent articles</summary>
 
 > Automatically synchronized from journeytocode.io via GitHub Actions.
 
 <!-- BLOG-POST-LIST:START -->
-- [What a Long, Strange Trip...](https://journeytocode.io/what-a-long-strange-trip) — The last time I posted was on April 28, 2025. I know the exact date because it was the same day I got married.
-Looking b...
+- [What a Long, Strange Trip...](https://journeytocode.io/what-a-long-strange-trip) — The last time I posted was on April 28, 2025. I know the exact date because it was the same day I got married. Looking b...
 - [From DOS to Desktop Disasters](https://journeytocode.io/from-dos-to-desktop-disasters) — I grew up as the youngest offspring of one particularly tech-savvy individual who among many jobs, initially moved our f...
 - [The Future of Web Components](https://journeytocode.io/the-future-of-web-components) — Web Components have come a long way since their introduction, evolving from a niche standard to a cornerstone of modern...
 - [Advanced Patterns &amp; Integration with Frameworks](https://journeytocode.io/advanced-patterns-and-integration-with-frameworks) — Web Components promise the holy grail of front-end development: truly reusable, framework-agnostic components that work...
-- [Real-World Examples &amp; Patterns in Web Components](https://journeytocode.io/real-world-examples-and-patterns-in-web-components) — In today&#39;s diverse front-end landscape, Web Components stand out as a platform-native solution for creating reusable UI...<!-- BLOG-POST-LIST:END -->
+- [Real-World Examples &amp; Patterns in Web Components](https://journeytocode.io/real-world-examples-and-patterns-in-web-components) — In today&#39;s diverse front-end landscape, Web Components stand out as a platform-native solution for creating reusable UI...
+<!-- BLOG-POST-LIST:END -->
+
 </details>
 
 ---
