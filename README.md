@@ -369,13 +369,14 @@ I write at **[Journey to Code](https://journeytocode.io)** about the things I'm 
 > Automatically synchronized from journeytocode.io via GitHub Actions.
 
 <!-- BLOG-POST-LIST:START -->
+- [One Attack Is Not a Fight.](https://journeytocode.io/build-a-combat-loop-in-rust) — Our game can now calculate damage, reduce health, and decide whether an enemy has been defeated.
+There is a problem, tho...
 - [Skip Hello World.](https://journeytocode.io/skip-hello-world) — Are you curious about diving into Rust, but are tired of tutorials that stop at Hello World!?
 In this article, I am goin...
 - [What a Long, Strange Trip...](https://journeytocode.io/what-a-long-strange-trip) — The last time I posted was on April 28, 2025. I know the exact date because it was the same day I got married.
 Looking b...
 - [From DOS to Desktop Disasters](https://journeytocode.io/from-dos-to-desktop-disasters) — I grew up as the youngest offspring of one particularly tech-savvy individual who among many jobs, initially moved our f...
-- [The Future of Web Components](https://journeytocode.io/the-future-of-web-components) — Web Components have come a long way since their introduction, evolving from a niche standard to a cornerstone of modern...
-- [Advanced Patterns &amp; Integration with Frameworks](https://journeytocode.io/advanced-patterns-and-integration-with-frameworks) — Web Components promise the holy grail of front-end development: truly reusable, framework-agnostic components that work...<!-- BLOG-POST-LIST:END -->
+- [The Future of Web Components](https://journeytocode.io/the-future-of-web-components) — Web Components have come a long way since their introduction, evolving from a niche standard to a cornerstone of modern...<!-- BLOG-POST-LIST:END -->
 
 </details>
 
