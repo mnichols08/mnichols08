@@ -369,6 +369,9 @@ I write at **[Journey to Code](https://journeytocode.io)** about the things I'm 
 > Automatically synchronized from journeytocode.io via GitHub Actions.
 
 <!-- BLOG-POST-LIST:START -->
+- [Borrowing Without the Lecture.](https://journeytocode.io/borrowing-without-the-lecture) — Our game has a Player and an Enemy
+Then, the moment they fight, we strip them back down for parts:
+enemy.health = attack...
 - [Three Numbers Are Not a Player.](https://journeytocode.io/three-numbers-are-not-a-player) — Look at this line:
 attack&lpar;enemy_health, 5, 2&rpar;
 
@@ -379,8 +382,7 @@ There is a problem, tho...
 - [Skip Hello World.](https://journeytocode.io/skip-hello-world) — Are you curious about diving into Rust, but are tired of tutorials that stop at Hello World!?
 In this article, I am goin...
 - [What a Long, Strange Trip...](https://journeytocode.io/what-a-long-strange-trip) — The last time I posted was on April 28, 2025. I know the exact date because it was the same day I got married.
-Looking b...
-- [From DOS to Desktop Disasters](https://journeytocode.io/from-dos-to-desktop-disasters) — I grew up as the youngest offspring of one particularly tech-savvy individual who among many jobs, initially moved our f...<!-- BLOG-POST-LIST:END -->
+Looking b...<!-- BLOG-POST-LIST:END -->
 
 </details>
 
