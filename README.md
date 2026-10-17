@@ -369,6 +369,11 @@ I write at **[Journey to Code](https://journeytocode.io)** about the things I'm 
 > Automatically synchronized from journeytocode.io via GitHub Actions.
 
 <!-- BLOG-POST-LIST:START -->
+- [One Fight Is Not a Game.](https://journeytocode.io/rust-game-state-impl-methods) — One Fight Is Not a Game.
+Every fight in our game ends the same way.
+The slime dies.
+Then the program dies with it.
+So fa...
 - [Borrowing Without the Lecture.](https://journeytocode.io/borrowing-without-the-lecture) — Our game has a Player and an Enemy
 Then, the moment they fight, we strip them back down for parts:
 enemy.health = attack...
@@ -380,9 +385,7 @@ Nothing...
 - [One Attack Is Not a Fight.](https://journeytocode.io/build-a-combat-loop-in-rust) — Our game can now calculate damage, reduce health, and decide whether an enemy has been defeated.
 There is a problem, tho...
 - [Skip Hello World.](https://journeytocode.io/skip-hello-world) — Are you curious about diving into Rust, but are tired of tutorials that stop at Hello World!?
-In this article, I am goin...
-- [What a Long, Strange Trip...](https://journeytocode.io/what-a-long-strange-trip) — The last time I posted was on April 28, 2025. I know the exact date because it was the same day I got married.
-Looking b...<!-- BLOG-POST-LIST:END -->
+In this article, I am goin...<!-- BLOG-POST-LIST:END -->
 
 </details>
 
