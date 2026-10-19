@@ -369,6 +369,9 @@ I write at **[Journey to Code](https://journeytocode.io)** about the things I'm 
 > Automatically synchronized from journeytocode.io via GitHub Actions.
 
 <!-- BLOG-POST-LIST:START -->
+- [Winning Is Not Progress.](https://journeytocode.io/add-gold-xp-and-levels-in-rust) — Our game can fight its way through stage after stage now.
+Click. The slime falls. A tougher one oozes in. Click.
+That is...
 - [One Fight Is Not a Game.](https://journeytocode.io/rust-game-state-impl-methods) — Every fight in our game ends the same way.
 The slime dies.
 Then the program dies with it.
@@ -382,9 +385,7 @@ attack&lpar;enemy_health, 5, 2&rpar;
 Three values. Two belong to the player. One belongs to the enemy.
 Nothing...
 - [One Attack Is Not a Fight.](https://journeytocode.io/build-a-combat-loop-in-rust) — Our game can now calculate damage, reduce health, and decide whether an enemy has been defeated.
-There is a problem, tho...
-- [Skip Hello World.](https://journeytocode.io/skip-hello-world) — Are you curious about diving into Rust, but are tired of tutorials that stop at Hello World!?
-In this article, I am goin...<!-- BLOG-POST-LIST:END -->
+There is a problem, tho...<!-- BLOG-POST-LIST:END -->
 
 </details>
 
