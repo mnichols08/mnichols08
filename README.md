@@ -369,11 +369,10 @@ I write at **[Journey to Code](https://journeytocode.io)** about the things I'm 
 > Automatically synchronized from journeytocode.io via GitHub Actions.
 
 <!-- BLOG-POST-LIST:START -->
-- [One Fight Is Not a Game.](https://journeytocode.io/rust-game-state-impl-methods) — One Fight Is Not a Game.
-Every fight in our game ends the same way.
+- [One Fight Is Not a Game.](https://journeytocode.io/rust-game-state-impl-methods) — Every fight in our game ends the same way.
 The slime dies.
 Then the program dies with it.
-So fa...
+So far, winning has been how o...
 - [Borrowing Without the Lecture.](https://journeytocode.io/borrowing-without-the-lecture) — Our game has a Player and an Enemy
 Then, the moment they fight, we strip them back down for parts:
 enemy.health = attack...
