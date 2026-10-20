@@ -369,23 +369,11 @@ I write at **[Journey to Code](https://journeytocode.io)** about the things I'm 
 > Automatically synchronized from journeytocode.io via GitHub Actions.
 
 <!-- BLOG-POST-LIST:START -->
-- [Winning Is Not Progress.](https://journeytocode.io/add-gold-xp-and-levels-in-rust) — Our game can fight its way through stage after stage now.
-Click. The slime falls. A tougher one oozes in. Click.
-That is...
-- [One Fight Is Not a Game.](https://journeytocode.io/rust-game-state-impl-methods) — Every fight in our game ends the same way.
-The slime dies.
-Then the program dies with it.
-So far, winning has been how o...
-- [Borrowing Without the Lecture.](https://journeytocode.io/borrowing-without-the-lecture) — Our game has a Player and an Enemy
-Then, the moment they fight, we strip them back down for parts:
-enemy.health = attack...
-- [Three Numbers Are Not a Player.](https://journeytocode.io/three-numbers-are-not-a-player) — Look at this line:
-attack&lpar;enemy_health, 5, 2&rpar;
-
-Three values. Two belong to the player. One belongs to the enemy.
-Nothing...
-- [One Attack Is Not a Fight.](https://journeytocode.io/build-a-combat-loop-in-rust) — Our game can now calculate damage, reduce health, and decide whether an enemy has been defeated.
-There is a problem, tho...<!-- BLOG-POST-LIST:END -->
+- [Winning Is Not Progress.](https://journeytocode.io/add-gold-xp-and-levels-in-rust) — Learn Rust by making winning pay. Add gold, XP, and levels to an idle game, level up with a while loop, and calculate da...
+- [One Fight Is Not a Game.](https://journeytocode.io/rust-game-state-impl-methods) — Learn Rust impl blocks and methods by giving your idle game one Game struct, tougher enemies by stage, and a game.click&lpar;...
+- [Borrowing Without the Lecture.](https://journeytocode.io/borrowing-without-the-lecture) — Learn Rust ownership and borrowing by fixing three real compiler errors. Let a player attack an enemy with &amp;Player and &amp;...
+- [Three Numbers Are Not a Player.](https://journeytocode.io/three-numbers-are-not-a-player) — When your attack takes three loose u32 values, Rust has no idea which belong to the player. Learn how structs give your...
+- [One Attack Is Not a Fight.](https://journeytocode.io/build-a-combat-loop-in-rust) — Learn Rust by turning small functions into a combat loop. Build an attack&lpar;&rpar; function, use mut and while, and create your...<!-- BLOG-POST-LIST:END -->
 
 </details>
 
