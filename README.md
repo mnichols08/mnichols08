@@ -205,14 +205,44 @@ Core: **JavaScript · TypeScript · React · Node.js · Express · Web Component
 <details>
 <summary><strong>Seven featured projects — each links to a full case study on mnix.dev</strong></summary>
 
-### ✨ [Constellation · Case study](https://mnix.dev/projects/constellation)
+### ✍️ [open.blog · Case study](https://mnix.dev/projects/open-blog)
 
-_In development._ Turns GitHub repositories into interactive project maps and README-ready SVGs.
+An open-source, self-hosted blogging platform where every post is a Markdown file you control.
 
 <details>
 <summary>Build notes &amp; technologies</summary>
 
-I built a shared Rust graph engine for the browser, command line, and GitHub Action, alongside an accessible web-component Studio.
+I wrote the core in Rust so one engine powers both the openblog command-line tool and a WebAssembly build for the browser. Native Web Components add search, code copying, and runnable Rust lessons on top of HTML that works without JavaScript.
+
+`Rust` `WebAssembly` `Web Components` `Markdown` `Playwright`
+
+</details>
+
+---
+
+### 🏠 [Kin · Case study](https://mnix.dev/projects/kin)
+
+A private household coordination app for lists, routines, handoffs, and chat, with on-device encryption.
+
+<details>
+<summary>Build notes &amp; technologies</summary>
+
+I wrote the household logic in Rust and compiled it to WebAssembly, then built a framework-free Web Components interface. I also built a Node.js sync relay that stores and forwards only encrypted data.
+
+`Rust` `WebAssembly` `Web Components` `PWA` `IndexedDB` `SQLite`
+
+</details>
+
+---
+
+### ✨ [Constellation · Case study](https://mnix.dev/projects/constellation)
+
+An open-source tool that turns GitHub activity into interactive project maps and README-ready SVGs.
+
+<details>
+<summary>Build notes &amp; technologies</summary>
+
+I built a shared Rust graph engine used in the browser, on the command line, and in a GitHub Action, alongside an accessible Web Components Studio.
 
 `Rust` `WebAssembly` `Web Components` `SVG` `GitHub Actions`
 
@@ -222,12 +252,12 @@ I built a shared Rust graph engine for the browser, command line, and GitHub Act
 
 ### 📝 [Readme Studio · Case study](https://mnix.dev/projects/readme-studio)
 
-_In development._ A browser-based GitHub profile README editor with editable sections, Markdown import and export, and a live preview.
+A browser-based GitHub profile README editor with editable sections, a live preview, and Markdown import and export.
 
 <details>
 <summary>Build notes &amp; technologies</summary>
 
-Built with native Web Components and local drafts, with optional WebAssembly analysis.
+I built the editor from native Web Components with local drafts, and added optional WebAssembly acceleration for README Health statistics with a JavaScript fallback.
 
 `JavaScript` `Web Components` `WebAssembly` `PWA` `Playwright`
 
@@ -237,12 +267,12 @@ Built with native Web Components and local drafts, with optional WebAssembly ana
 
 ### 📚 [open.quiz · Case study](https://mnix.dev/projects/open-quiz)
 
-An open-source, self-hostable learning platform independently evolved from Sprout.
+An open-source, self-hostable learning platform that I independently evolved from Sprout, a team-built financial-literacy app.
 
 <details>
 <summary>Build notes &amp; technologies</summary>
 
-I built modular curricula, administrator-managed themes and content packages, and a single-service React and Express deployment.
+I built modular curricula, administrator-managed themes, portable content packages, and a single-service deployment where Express serves the React app alongside the API.
 
 `React` `Node.js` `Express` `MongoDB` `Playwright`
 
@@ -250,16 +280,16 @@ I built modular curricula, administrator-managed themes and content packages, an
 
 ---
 
-### 🗺️ [Garrett County Adventures · Case study](https://mnix.dev/projects/gc-adventures)
+### ✅ [CTD Todo App · Case study](https://mnix.dev/projects/ctd-todo-app)
 
-_In development._ A local-first trip-planning site for Garrett County, Maryland.
+A React task manager with Airtable-backed tasks, inline editing, and searchable, sortable lists, extended from a Code the Dream guided project.
 
 <details>
 <summary>Build notes &amp; technologies</summary>
 
-I built a framework-free TypeScript explorer, local Rust/WebAssembly GPX analysis, saved outings, and a Markdown-to-guide publishing pipeline.
+I added optimistic updates that roll back when a save fails, cached sort and filter views, and regression tests for API errors and keyboard interactions.
 
-`TypeScript` `Rust` `WebAssembly` `OpenStreetMap` `PWA`
+`React` `Airtable` `Vite` `Vitest`
 
 </details>
 
@@ -267,82 +297,16 @@ I built a framework-free TypeScript explorer, local Rust/WebAssembly GPX analysi
 
 ### 💵 [Drawer Count · Case study](https://mnix.dev/projects/drawer-count)
 
-An installable cash-drawer calculator for repeat counts and daily records.
+An installable cash-drawer calculator that totals payments, compares them with expected cash, and saves daily counts.
 
 <details>
 <summary>Build notes &amp; technologies</summary>
 
-I built the counting interface as a Custom Element with Shadow DOM and custom events, then added on-device storage and offline caching.
+I built the counting control as a Custom Element with Shadow DOM and custom events, then added on-device history and offline caching.
 
 `JavaScript` `Web Components` `PWA` `Service Workers`
 
 </details>
-
----
-
-### 🥫 [Kitchen Inventory · Case study](https://mnix.dev/projects/kitchen-inventory)
-
-My individual capstone: a React app for tracking food, expiration dates, and shopping needs.
-
-<details>
-<summary>Build notes &amp; technologies</summary>
-
-I built the inventory flows, routed Airtable requests through a serverless function, and added local persistence.
-
-`React` `Vite` `Airtable` `Netlify Functions`
-
-</details>
-
----
-
-### ✅ [CTD Todo App · Case study](https://mnix.dev/projects/ctd-todo-app)
-
-A React task manager with Airtable-backed tasks and searchable, sortable lists — extended from a Code the Dream guided project.
-
-<details>
-<summary>Build notes &amp; technologies</summary>
-
-I added optimistic updates with rollback, caching, and regression tests for failures and keyboard interactions.
-
-`React` `Airtable` `Vite` `Vitest` `React Testing Library`
-
-</details>
-
-</details>
-
----
-
-# Current Build: Swing or Cast
-
-**[Swing or Cast](https://mnix.dev/projects/swing-or-cast)** is an in-development browser RPG where each expedition risks permanent character death. A shared Rust game core powers both the server and a WebAssembly adapter for the browser, keeping combat and progression rules identical on both sides. [Try the live demo](https://swing-or-cast.journeytocode.io/) · [View the source](https://github.com/mnichols08/rust-swing-or-cast)
-
-<details>
-<summary>⚔️ See how the Rust game core reaches the browser</summary>
-
-The `GameWasm` struct wraps the core game and exposes it to JavaScript. Each method applies an action through the Rust engine, then serializes the updated state back to the browser:
-
-```rust
-use wasm_bindgen::prelude::*;
-
-#[wasm_bindgen]
-pub struct GameWasm {
-    game: Game,
-}
-
-#[wasm_bindgen]
-impl GameWasm {
-    pub fn venture(&mut self) -> Result<JsValue, JsValue> {
-        self.game.venture().map_err(js_error)?;
-        self.snapshot()
-    }
-
-    pub fn snapshot(&self) -> Result<JsValue, JsValue> {
-        serde_wasm_bindgen::to_value(&self.game.snapshot()).map_err(js_error)
-    }
-}
-```
-
-[See the full WebAssembly adapter →](https://github.com/mnichols08/rust-swing-or-cast/blob/development/crates/game-wasm/src/lib.rs)
 
 </details>
 
@@ -350,7 +314,7 @@ impl GameWasm {
 
 # Technical Writing
 
-I write at **[Journey to Code](https://journeytocode.io)** about the things I'm building and learning — JavaScript, Web Components, Git, application architecture, and experiments worth understanding beyond just getting the code to work.
+I write at **[Journey to Code](https://journeytocode.io)** about the things I'm building and learning — JavaScript, Web Components, Git, Rust and WebAssembly, application architecture, and experiments worth understanding beyond just getting the code to work.
 
 <details>
 <summary>📚 Featured series</summary>
