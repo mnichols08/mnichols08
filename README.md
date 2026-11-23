@@ -6,14 +6,8 @@
 </a>
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=mnichols08&hide_border=true&background=111111&stroke=E3DE13&ring=E3DE13&fire=E3DE13&currStreakLabel=E3DE13&currStreakNum=ffffff&sideLabels=ffffff&sideNums=ffffff&dates=b6b211">
-    <img src="https://streak-stats.demolab.com?user=mnichols08&hide_border=true&background=F5F4E6&stroke=111111&ring=827F2B&fire=827F2B&currStreakLabel=111111&currStreakNum=111111&sideLabels=111111&sideNums=111111&dates=827F2B" alt="GitHub Streak" height="165">
-  </picture>
-</p>
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=E3DE13&center=true&vCenter=true&width=600&lines=Full-Stack+Developer;Building+with+React+%26+Node.js;Exploring+Rust+%2B+WebAssembly;Web+Components+Enthusiast">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=827F2B&center=true&vCenter=true&width=600&lines=Full-Stack+Developer;Building+with+React+%26+Node.js;Exploring+Rust+%2B+WebAssembly;Web+Components+Enthusiast" alt="Typing SVG">
+    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=E3DE13&center=true&vCenter=true&width=600&lines=Full-Stack+Developer;Creator+of+Zubra;HTML-first+Web+Components;Rust+%2B+WebAssembly;React+%26+Node.js">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=827F2B&center=true&vCenter=true&width=600&lines=Full-Stack+Developer;Creator+of+Zubra;HTML-first+Web+Components;Rust+%2B+WebAssembly;React+%26+Node.js" alt="Typing SVG">
   </picture>
 </p>
 <br>
@@ -35,22 +29,108 @@
 
 ---
 
-# About Me
+# Hi, I'm Mikey
 
 I build web applications, from the interface and API to the tests that check how they work together.
 
-I'm drawn to the engineering around the feature as much as the feature itself — **testing, accessibility, authentication, application architecture, deployment, and making frontend and backend systems work well together.**
+I created **[Zubra](https://mnix.dev/projects/zubra)**, an HTML-first compiler for Web Components written in Rust, and I test it on real products: a component library, a 94-game site, a blogging platform's admin studio, and client work at [Potomac Solutions](https://potomac.solutions). I write about what I learn at **[Journey to Code](https://journeytocode.io)**.
 
-Right now I'm pushing into **Rust and WebAssembly** — using WASM for compute-heavy domain logic behind native Web Component UIs with no framework in the render path. I write about what I learn at **[Journey to Code](https://journeytocode.io)**.
+Core: **JavaScript · TypeScript · React · Node.js · Web Components · Rust/WebAssembly**
+
+---
+
+# Selected Work
+
+Each title opens a full case study on [mnix.dev](https://mnix.dev).
+
+| Project | What it is | Links |
+| --- | --- | --- |
+| **[Zubra](https://mnix.dev/projects/zubra)** | A compiler for Web Components. Write a component as HTML with bindings and a script, and get server-rendered HTML plus a small custom element that hydrates it.<br><sub>Rust · WebAssembly · TypeScript</sub> | [Demo](https://zubra-js.github.io/zubra/) · [Code](https://github.com/zubra-js/zubra) |
+| **[open.parlor](https://mnix.dev/projects/open-parlor)** | A family games site with 94 card, board, word, dice, and arcade games, built to test Zubra where React, Vue, Svelte, Solid, and Angular share one set of components.<br><sub>TypeScript · Zubra · Node.js · PWA</sub> | [Demo](https://open-parlor.up.railway.app/) · [Code](https://github.com/journey-to-code-org/open.parlor) |
+| **[Zubra UI](https://mnix.dev/projects/zubra-ui)** | 81 accessible web components you copy into your own project and own, for plain HTML or any framework, with a theme studio and page composer.<br><sub>Zubra · Web Components · CSS</sub> | [Demo](https://zubra-js.github.io/zubra-ui/) · [Code](https://github.com/zubra-js/zubra-ui) |
+| **[open.blog](https://mnix.dev/projects/open-blog)** | A self-hosted blogging platform: Markdown files in, a fast static site out, with feeds, search, themes, scheduling, and a publishing studio built with Zubra UI.<br><sub>Rust · WebAssembly · Web Components</sub> | [Demo](https://openblog.journeytocode.io/) · [Code](https://github.com/journey-to-code-org/open.blog) |
+| **[Kin](https://mnix.dev/projects/kin)** | A private household app for lists, routines, handoffs, and chat, with on-device encryption and sync a server can relay but never read.<br><sub>Rust · WebAssembly · PWA · SQLite</sub> | [Demo](https://kin.journeytocode.io/) · [Code](https://github.com/mnichols08/kin-app) |
+| **[Constellation](https://mnix.dev/projects/constellation)** | Turns GitHub activity into interactive project maps and README-ready SVGs. It draws the map further down this page.<br><sub>Rust · Web Components · SVG · GitHub Actions</sub> | [Demo](https://mnichols08.github.io/constellation/) · [Code](https://github.com/mnichols08/constellation) |
+| **[Readme Studio](https://mnix.dev/projects/readme-studio)** | A browser editor for GitHub profile READMEs with editable sections, live preview, and Markdown import and export.<br><sub>Web Components · WebAssembly · PWA</sub> | [Demo](https://readme-studio.journeytocode.io/) · [Code](https://github.com/mnichols08/readme-studio) |
+
+More projects, including earlier work, are on **[mnix.dev](https://mnix.dev/#portfolio)**.
+
+---
+
+# Team & Community Work
+
+Projects I built with other people. Details for each are on my **[team and community page](https://mnix.dev/collaboration)**.
+
+- **[Chingu Voyages](https://mnix.dev/collaboration#chingu)** — five remote, cross-timezone team voyages. I'm currently a developer on [Voyage 63, Tier 3, Team 33](https://github.com/chingu-voyages/V63-tier3-team-33), building an event planner with Next.js, TypeScript, and Supabase. Earlier voyages: [Color Compass](https://mnix.dev/projects/color-compass), [Dinosauria](https://mnix.dev/projects/dinosauria) (lead developer), [Daily Tasks](https://mnix.dev/projects/daily-tasks) (product owner), and [Mad Libs Number 9](https://mnix.dev/projects/mad-libs).
+- **[Code the Dream](https://mnix.dev/collaboration#code-the-dream)** — co-project lead, full-stack developer, and testing lead on [Sprout](https://mnix.dev/projects/sprout), a team practicum. Afterwards I grew it into [open.quiz](https://mnix.dev/projects/open-quiz), an open-source learning platform.
+- **[Zero To Mastery](https://mnix.dev/collaboration#zero-to-mastery)** — volunteer maintainer of the ZTM Git Gang, and contributor to the [ZTM Desktop App](https://mnix.dev/projects/ztm-desktop-app) (Tauri, React, Rust) and the [ZtM Job Board](https://mnix.dev/projects/ztm-job-board). I submitted four projects to the [ZTM Build Fest](https://github.com/zero-to-mastery/ZTM-Build-Fest).
+
+---
+
+# Technical Writing
+
+I write at **[Journey to Code](https://journeytocode.io)** about what I'm building and learning: JavaScript, Web Components, Git, Rust and WebAssembly, and application architecture.
+
+<details>
+<summary>Featured series</summary>
+
+- **[Commit to Success: Mastering Git](https://journeytocode.io/series/learn-git-from-basics-to-advanced)** — Moving beyond basic commands to master version control, branches, merging, and real-world collaboration.
+- **[Journey to Web Components](https://journeytocode.io/series/web-components-fundamentals-to-advanced)** — Building reusable UI architecture without heavy frameworks using Custom Elements, Shadow DOM, and native browser APIs.
+- **[Mastering the Fetch API & Browser Storage](https://journeytocode.io/series/mastering-fetch-api-browser-storage)** — Network requests, client-side persistence (IndexedDB, Cache API), and resilient offline-first design.
+- **[Mastering the Web Audio API](https://journeytocode.io/series/complete-web-audio-api-tutorial)** — Exploring creative coding, spatial audio, synthesis, and processing directly in the browser.
+- **[Coding Patterns Demystified](https://journeytocode.io/coding-patterns-demystified)** — A deep dive into the Model-View-Controller pattern with shipping code.
+
+</details>
+
+<details>
+<summary>Recent articles</summary>
+
+> Automatically synchronized from journeytocode.io via GitHub Actions.
+
+<!-- BLOG-POST-LIST:START -->
+- [One Message Is Not a Conversation](https://journeytocode.io/one-message-is-not-a-conversation/) — Keep a Rust TCP client and server talking until quit, using loop, break, continue and the zero-byte read that means the...
+- [The Input That Never Got Submitted](https://journeytocode.io/a-custom-input-that-joins-the-form/) — Build a custom form field the browser actually submits, resets and blocks on bad input, using formAssociated and Element...
+- [A Server With Nobody to Talk To](https://journeytocode.io/a-server-with-nobody-to-talk-to/) — Build a Rust TCP server and client, send one welcome message across localhost and let Result and the question-mark opera...
+- [The File That Exists Twice](https://journeytocode.io/the-file-that-exists-twice/) — Our practicum team never fixed a merge conflict that kept coming back. The cause was one file with two names in Git. See...
+- [The Tutorial Is Not the Game.](https://journeytocode.io/the-tutorial-is-not-the-game/) — Turn a finished Rust tutorial into a welcoming open-source project, then take one small contribution from idea to pull r...<!-- BLOG-POST-LIST:END -->
+
+</details>
 
 ---
 
 # Technical Stack
 
-Core: **JavaScript · TypeScript · React · Node.js · Express · Web Components · Rust/WebAssembly**
-
 <details>
 <summary><strong>Full stack &amp; tooling</strong></summary>
+
+## Systems, Desktop & Hardware
+
+<p>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Rust-111111?style=for-the-badge&logo=rust&logoColor=white">
+    <img src="https://img.shields.io/badge/Rust-F5F4E6?style=for-the-badge&logo=rust&logoColor=111111" alt="Rust">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/WebAssembly-111111?style=for-the-badge&logo=webassembly&logoColor=654FF0">
+    <img src="https://img.shields.io/badge/WebAssembly-F5F4E6?style=for-the-badge&logo=webassembly&logoColor=654FF0" alt="WebAssembly">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Axum-111111?style=for-the-badge&logo=rust&logoColor=E3DE13">
+    <img src="https://img.shields.io/badge/Axum-F5F4E6?style=for-the-badge&logo=rust&logoColor=111111" alt="Axum">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Tauri-111111?style=for-the-badge&logo=tauri&logoColor=24C8D8">
+    <img src="https://img.shields.io/badge/Tauri-F5F4E6?style=for-the-badge&logo=tauri&logoColor=24C8D8" alt="Tauri">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Electron-111111?style=for-the-badge&logo=electron&logoColor=9FEAF9">
+    <img src="https://img.shields.io/badge/Electron-F5F4E6?style=for-the-badge&logo=electron&logoColor=47848F" alt="Electron">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Raspberry_Pi-111111?style=for-the-badge&logo=raspberrypi&logoColor=C51A4A">
+    <img src="https://img.shields.io/badge/Raspberry_Pi-F5F4E6?style=for-the-badge&logo=raspberrypi&logoColor=A22846" alt="Raspberry Pi">
+  </picture>
+</p>
 
 ## Frontend
 
@@ -178,7 +258,14 @@ Core: **JavaScript · TypeScript · React · Node.js · Express · Web Component
 ---
 
 <details open>
-<summary><strong>GitHub metrics &amp; project constellation</strong></summary>
+<summary><strong>GitHub activity &amp; project constellation</strong></summary>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=mnichols08&hide_border=true&background=111111&stroke=E3DE13&ring=E3DE13&fire=E3DE13&currStreakLabel=E3DE13&currStreakNum=ffffff&sideLabels=ffffff&sideNums=ffffff&dates=b6b211">
+    <img src="https://streak-stats.demolab.com?user=mnichols08&hide_border=true&background=F5F4E6&stroke=111111&ring=827F2B&fire=827F2B&currStreakLabel=111111&currStreakNum=111111&sideLabels=111111&sideNums=111111&dates=827F2B" alt="GitHub Streak" height="165">
+  </picture>
+</p>
 
 <p align="center">
   <picture>
@@ -200,152 +287,9 @@ Core: **JavaScript · TypeScript · React · Node.js · Express · Web Component
 
 ---
 
-# Selected Work
+# Let's Talk
 
-<details>
-<summary><strong>Seven featured projects — each links to a full case study on mnix.dev</strong></summary>
-
-### ✍️ [open.blog · Case study](https://mnix.dev/projects/open-blog)
-
-An open-source, self-hosted blogging platform where every post is a Markdown file you control.
-
-<details>
-<summary>Build notes &amp; technologies</summary>
-
-I wrote the core in Rust so one engine powers both the openblog command-line tool and a WebAssembly build for the browser. Native Web Components add search, code copying, and runnable Rust lessons on top of HTML that works without JavaScript.
-
-`Rust` `WebAssembly` `Web Components` `Markdown` `Playwright`
-
-</details>
-
----
-
-### 🏠 [Kin · Case study](https://mnix.dev/projects/kin)
-
-A private household coordination app for lists, routines, handoffs, and chat, with on-device encryption.
-
-<details>
-<summary>Build notes &amp; technologies</summary>
-
-I wrote the household logic in Rust and compiled it to WebAssembly, then built a framework-free Web Components interface. I also built a Node.js sync relay that stores and forwards only encrypted data.
-
-`Rust` `WebAssembly` `Web Components` `PWA` `IndexedDB` `SQLite`
-
-</details>
-
----
-
-### ✨ [Constellation · Case study](https://mnix.dev/projects/constellation)
-
-An open-source tool that turns GitHub activity into interactive project maps and README-ready SVGs.
-
-<details>
-<summary>Build notes &amp; technologies</summary>
-
-I built a shared Rust graph engine used in the browser, on the command line, and in a GitHub Action, alongside an accessible Web Components Studio.
-
-`Rust` `WebAssembly` `Web Components` `SVG` `GitHub Actions`
-
-</details>
-
----
-
-### 📝 [Readme Studio · Case study](https://mnix.dev/projects/readme-studio)
-
-A browser-based GitHub profile README editor with editable sections, a live preview, and Markdown import and export.
-
-<details>
-<summary>Build notes &amp; technologies</summary>
-
-I built the editor from native Web Components with local drafts, and added optional WebAssembly acceleration for README Health statistics with a JavaScript fallback.
-
-`JavaScript` `Web Components` `WebAssembly` `PWA` `Playwright`
-
-</details>
-
----
-
-### 📚 [open.quiz · Case study](https://mnix.dev/projects/open-quiz)
-
-An open-source, self-hostable learning platform that I independently evolved from Sprout, a team-built financial-literacy app.
-
-<details>
-<summary>Build notes &amp; technologies</summary>
-
-I built modular curricula, administrator-managed themes, portable content packages, and a single-service deployment where Express serves the React app alongside the API.
-
-`React` `Node.js` `Express` `MongoDB` `Playwright`
-
-</details>
-
----
-
-### ✅ [CTD Todo App · Case study](https://mnix.dev/projects/ctd-todo-app)
-
-A React task manager with Airtable-backed tasks, inline editing, and searchable, sortable lists, extended from a Code the Dream guided project.
-
-<details>
-<summary>Build notes &amp; technologies</summary>
-
-I added optimistic updates that roll back when a save fails, cached sort and filter views, and regression tests for API errors and keyboard interactions.
-
-`React` `Airtable` `Vite` `Vitest`
-
-</details>
-
----
-
-### 💵 [Drawer Count · Case study](https://mnix.dev/projects/drawer-count)
-
-An installable cash-drawer calculator that totals payments, compares them with expected cash, and saves daily counts.
-
-<details>
-<summary>Build notes &amp; technologies</summary>
-
-I built the counting control as a Custom Element with Shadow DOM and custom events, then added on-device history and offline caching.
-
-`JavaScript` `Web Components` `PWA` `Service Workers`
-
-</details>
-
-</details>
-
----
-
-# Technical Writing
-
-I write at **[Journey to Code](https://journeytocode.io)** about the things I'm building and learning — JavaScript, Web Components, Git, Rust and WebAssembly, application architecture, and experiments worth understanding beyond just getting the code to work.
-
-<details>
-<summary>📚 Featured series</summary>
-
-- **[Commit to Success: Mastering Git](https://journeytocode.io/series/learn-git-from-basics-to-advanced)** — Moving beyond basic commands to master version control, branches, merging, and real-world collaboration.
-- **[Journey to Web Components](https://journeytocode.io/series/web-components-fundamentals-to-advanced)** — Building reusable UI architecture without heavy frameworks using Custom Elements, Shadow DOM, and native browser APIs.
-- **[Mastering the Fetch API & Browser Storage](https://journeytocode.io/series/mastering-fetch-api-browser-storage)** — Network requests, client-side persistence (IndexedDB, Cache API), and resilient offline-first design.
-- **[Mastering the Web Audio API](https://journeytocode.io/series/complete-web-audio-api-tutorial)** — Exploring creative coding, spatial audio, synthesis, and processing directly in the browser.
-- **[Coding Patterns Demystified](https://journeytocode.io/coding-patterns-demystified)** — A deep dive into the Model-View-Controller pattern with shipping code.
-
-</details>
-
-<details>
-<summary>✍️ Recent articles</summary>
-
-> Automatically synchronized from journeytocode.io via GitHub Actions.
-
-<!-- BLOG-POST-LIST:START -->
-- [One Message Is Not a Conversation](https://journeytocode.io/one-message-is-not-a-conversation/) — Keep a Rust TCP client and server talking until quit, using loop, break, continue and the zero-byte read that means the...
-- [The Input That Never Got Submitted](https://journeytocode.io/a-custom-input-that-joins-the-form/) — Build a custom form field the browser actually submits, resets and blocks on bad input, using formAssociated and Element...
-- [A Server With Nobody to Talk To](https://journeytocode.io/a-server-with-nobody-to-talk-to/) — Build a Rust TCP server and client, send one welcome message across localhost and let Result and the question-mark opera...
-- [The File That Exists Twice](https://journeytocode.io/the-file-that-exists-twice/) — Our practicum team never fixed a merge conflict that kept coming back. The cause was one file with two names in Git. See...
-- [The Tutorial Is Not the Game.](https://journeytocode.io/the-tutorial-is-not-the-game/) — Turn a finished Rust tutorial into a welcoming open-source project, then take one small contribution from idea to pull r...<!-- BLOG-POST-LIST:END -->
-
-</details>
-
----
-
-# Open to Roles
-
-Looking for full-stack and frontend positions where **performance, offline-first design, and framework-agnostic UI** are taken seriously.
+I'm open to remote full-stack and frontend roles, project ideas, and collaborations, especially where **performance, offline-first design, and framework-agnostic UI** matter.
 
 **[Portfolio](https://mnix.dev)** · **[Journey to Code](https://journeytocode.io)** · **[LinkedIn](https://linkedin.com/in/mnix-dev)** · **[Resume](https://mnix.dev/file/mnichols-cv.pdf)**
 
