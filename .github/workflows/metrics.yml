@@ -8,6 +8,12 @@ on:
 permissions:
   contents: write
 
+# Every run commits to the same files on the `output` branch. Overlapping runs
+# race on the file sha and fail with 409 "does not match", so serialize them.
+concurrency:
+  group: metrics-output
+  cancel-in-progress: false
+
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
