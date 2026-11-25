@@ -14,7 +14,7 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { parseArgs } from 'node:util';
-import { paletteFor, derive } from './palette.mjs';
+import { paletteFor, derive, today, isTwoTone } from './palette.mjs';
 
 const hex = (color) => color.replace('#', '');
 
@@ -23,9 +23,13 @@ const TYPING_LINES = ['Full-Stack Developer', 'Creator of Zubra', 'HTML-first We
 export function artFor(date) {
   const palette = paletteFor(date);
   const { dark, light } = derive(palette);
+  // Two-tone (holiday) palettes alternate badges and split the streak card between both colours.
+  const duo = isTwoTone(palette);
   const modes = {
-    dark: { accent: dark.accent, onAccent: palette.dark.background, text: dark.fg, soft: dark.ramp[2], rule: dark.accent, ring: dark.accent },
-    light: { accent: palette.light.star, onAccent: palette.light.background, text: light.fg, soft: palette.light.star, rule: light.fg, ring: palette.light.star },
+    dark: { accent: dark.accent, second: dark.second, onAccent: palette.dark.background, text: dark.fg, soft: dark.ramp[2], rule: dark.accent, ring: dark.accent },
+    light: duo
+      ? { accent: light.accent, second: light.second, onAccent: palette.light.background, text: light.fg, soft: light.second, rule: light.fg, ring: light.accent }
+      : { accent: palette.light.star, second: palette.light.star, onAccent: palette.light.background, text: light.fg, soft: palette.light.star, rule: light.fg, ring: palette.light.star },
   };
   const items = [];
 
@@ -38,26 +42,26 @@ export function artFor(date) {
 
     items.push({
       file: `streak-${mode}.svg`,
-      url: `https://streak-stats.demolab.com?user=mnichols08&hide_border=true&background=00000000&stroke=${hex(c.rule)}&ring=${hex(c.ring)}&fire=${hex(c.ring)}&currStreakLabel=${hex(mode === 'dark' ? c.accent : c.text)}&currStreakNum=${hex(c.text)}&sideLabels=${hex(c.text)}&sideNums=${hex(c.text)}&dates=${hex(c.soft)}`,
+      url: `https://streak-stats.demolab.com?user=mnichols08&hide_border=true&background=00000000&stroke=${hex(c.rule)}&ring=${hex(c.ring)}&fire=${hex(c.second)}&currStreakLabel=${hex(mode === 'dark' ? c.accent : c.text)}&currStreakNum=${hex(c.text)}&sideLabels=${hex(c.text)}&sideNums=${hex(c.text)}&dates=${hex(c.soft)}`,
     });
 
     // Badges whose message was the base yellow. (JavaScript is not one of them: it stays JS yellow.)
-    const badge = (name, label, extra = '') => ({
+    const badge = (name, label, extra = '', color = c.accent) => ({
       file: `badge-${name}-${mode}.svg`,
-      url: `https://img.shields.io/badge/${label}-${hex(c.accent)}?style=for-the-badge${extra}&logoColor=${hex(c.onAccent)}`,
+      url: `https://img.shields.io/badge/${label}-${hex(color)}?style=for-the-badge${extra}&logoColor=${hex(c.onAccent)}`,
     });
     items.push(badge('portfolio', 'Portfolio-mnix.dev'));
-    items.push(badge('writing', 'Technical_Writing-Journey_to_Code'));
+    items.push(badge('writing', 'Technical_Writing-Journey_to_Code', '', c.second));
     items.push(badge('resume', 'Resume-Download', '&logo=readdotcv'));
   }
 
   // Dark-mode badges whose logo was the base yellow (light mode keeps its dark logo).
-  const logo = (name, label, icon) => ({
+  const logo = (name, label, icon, color = modes.dark.accent) => ({
     file: `badge-${name}-dark.svg`,
-    url: `https://img.shields.io/badge/${label}-111111?style=for-the-badge&logo=${icon}&logoColor=${hex(modes.dark.accent)}`,
+    url: `https://img.shields.io/badge/${label}-111111?style=for-the-badge&logo=${icon}&logoColor=${hex(color)}`,
   });
   items.push(logo('axum', 'Axum', 'rust'));
-  items.push(logo('webcomponents', 'Web_Components', 'webcomponents.org'));
+  items.push(logo('webcomponents', 'Web_Components', 'webcomponents.org', modes.dark.second));
   items.push(logo('restapis', 'REST_APIs', 'fastapi'));
 
   return { palette, items };
@@ -80,7 +84,7 @@ async function fetchSvg(url) {
 const isMain = process.argv[1]?.replaceAll('\\', '/').endsWith('scripts/readme-art.mjs');
 if (isMain) {
   const { values, positionals } = parseArgs({ allowPositionals: true, options: { date: { type: 'string' }, list: { type: 'boolean', default: false } } });
-  const date = values.date ?? new Date().toISOString().slice(0, 10);
+  const date = values.date ?? today();
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || Number.isNaN(Date.parse(date))) throw new Error(`--date must be YYYY-MM-DD, got "${date}".`);
   const { palette, items } = artFor(date);
 

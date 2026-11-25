@@ -1,5 +1,5 @@
 # Save as .github/workflows/constellation.yml
-# Base look lives in constellation.config.json; scripts/daily-design.mjs picks each UTC day's sky.
+# Base look lives in constellation.config.json; scripts/daily-design.mjs picks each day's sky (US Eastern).
 # The tech stack images are drawn by Constellation, matched to today's palette (light and dark) and given a small daily motion by
 # scripts/style-tech.mjs, and published beside it for the README's Tech stack section.
 # The banners in assets/ are re-hued to the same palette (scripts/recolor-banner.mjs), and the README's
@@ -7,7 +7,7 @@
 name: Daily constellation
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 5 * * *'  # midnight EST (1am EDT)
   workflow_dispatch:
 permissions:
   contents: write

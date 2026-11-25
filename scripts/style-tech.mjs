@@ -11,7 +11,7 @@
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { parseArgs } from 'node:util';
-import { paletteFor, derive, mix } from './palette.mjs';
+import { paletteFor, derive, mix, today } from './palette.mjs';
 
 function hash(text) {
   let h = 2166136261;
@@ -137,8 +137,13 @@ export function animateTech(svg, { kind, date }) {
   if (!count) throw new Error(`No ${kind} elements found to animate; the Constellation output format may have changed.`);
 
   const style = `<style>/* daily style: ${paletteFor(date).label} palette, ${name} motion (${date}) */\n${themeCss(kind, date)}\n${css}\n@media (prefers-reduced-motion:reduce){.tech-bar,.star,.star-halo,.repository{animation:none!important}}</style>`;
+  // A palette's secret (Dec 6) is tucked faintly into the bottom corner, for those who look.
+  const { secret } = paletteFor(date);
+  const egg = secret
+    ? `<text x="99%" y="98%" text-anchor="end" font-size="9" font-family="Georgia,serif" fill="var(--sky-star,var(--t-subtle,#999))" opacity="0.35">♥ ${secret}</text>`
+    : '';
   // Placed last so it wins over Constellation's own rules at equal specificity.
-  out = out.replace(/<\/svg>\s*$/, () => `${style}</svg>`);
+  out = out.replace(/<\/svg>\s*$/, () => `${egg}${style}</svg>`);
   return { svg: out, name, count };
 }
 
@@ -152,7 +157,7 @@ if (isMain) {
   if (!file || !['card', 'map'].includes(values.kind)) {
     throw new Error('Usage: style-tech.mjs FILE --kind card|map [--date YYYY-MM-DD] [--out FILE]');
   }
-  const date = values.date ?? new Date().toISOString().slice(0, 10);
+  const date = values.date ?? today();
   const { svg, name, count } = animateTech(readFileSync(file, 'utf8'), { kind: values.kind, date });
   writeFileSync(file, svg);
   console.error(`${file}: ${name} palette + motion on ${count} elements (${date})`);

@@ -13,7 +13,7 @@
 
 import { readFileSync, writeFileSync, appendFileSync } from 'node:fs';
 import { parseArgs } from 'node:util';
-import { rng, weighted, palettes, paletteKey } from './palette.mjs';
+import { rng, weighted, palettes, paletteKey, today } from './palette.mjs';
 
 const { values: args } = parseArgs({
   options: {
@@ -65,6 +65,7 @@ function css(p) {
   const decl = (c) => Object.entries(c).map(([k, v]) => `  --sky-${k}: ${v};`).join('\n');
   return [
     '/* Daily sky: light palette, then the viewer’s dark preference. */',
+    ...(p.secret ? [`/* ♥ ${p.secret} */`] : []),
     'svg {',
     decl(p.light),
     '}',
@@ -88,7 +89,7 @@ export function designFor(date, base) {
   const random = rng(`constellation:${date}`);
   const config = structuredClone(base);
 
-  const key = paletteKey(random);
+  const key = paletteKey(random, date);
   const palette = palettes[key];
   const [arrangement, arrangementLabel] = weighted(random, arrangements);
   const [skyMode] = weighted(random, skies);
@@ -172,12 +173,6 @@ export function designFor(date, base) {
 
 // ---- cli -------------------------------------------------------------------------
 
-function utcDate(offsetDays = 0) {
-  const now = new Date();
-  now.setUTCDate(now.getUTCDate() + offsetDays);
-  return now.toISOString().slice(0, 10);
-}
-
 function assertDate(value) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(value) || Number.isNaN(Date.parse(value))) {
     throw new Error(`--date must be YYYY-MM-DD, got "${value}".`);
@@ -191,7 +186,7 @@ if (isMain) {
   const base = JSON.parse(readFileSync(args.base, 'utf8'));
 
   if (args.days) {
-    const start = assertDate(args.date ?? utcDate());
+    const start = assertDate(args.date ?? today());
     for (let i = 0; i < Number(args.days); i++) {
       const d = new Date(`${start}T00:00:00Z`);
       d.setUTCDate(d.getUTCDate() + i);
@@ -199,7 +194,7 @@ if (isMain) {
       console.log(`${date}  ${designFor(date, base).name}`);
     }
   } else {
-    const date = assertDate(args.date ?? utcDate());
+    const date = assertDate(args.date ?? today());
     const { config, name } = designFor(date, base);
     if (args['name-only']) console.log(name);
     else if (args.out) writeFileSync(args.out, `${JSON.stringify(config, null, 2)}\n`);

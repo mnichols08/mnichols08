@@ -2,7 +2,7 @@ name: Metrics
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 5 * * *"  # midnight EST (1am EDT)
   workflow_dispatch:
 
 permissions:

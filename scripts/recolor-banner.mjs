@@ -15,7 +15,7 @@ import { readFileSync, writeFileSync, copyFileSync, mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
 import { inflateSync, deflateSync } from 'node:zlib';
 import { parseArgs } from 'node:util';
-import { paletteFor, hlsFromHex, hexFromHls } from './palette.mjs';
+import { paletteFor, hlsFromHex, hexFromHls, today, isTwoTone, secondSatScale, accentSatScale } from './palette.mjs';
 
 const SIGNATURE = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
 // Hue of the banners' yellow, measured from the palette's own signature accent.
@@ -104,23 +104,51 @@ function encode({ width, height, pixels }) {
   return Buffer.concat([SIGNATURE, chunk('IHDR', header), chunk('IDAT', deflateSync(raw, { level: 9 })), chunk('IEND', Buffer.alloc(0))]);
 }
 
-export function rehue(image, targetHue) {
+// Recolours one saturated pixel to `hue`, scaling its saturation (so a white or silver
+// second colour turns the glow silver instead of an arbitrary hue).
+function recolor(h, l, s, hue, satScale) {
+  return hexFromHls(hue, l, Math.min(1, s * satScale)).slice(1).match(/../g).map((v) => parseInt(v, 16));
+}
+
+// Where the accent stays on a two-tone day: the round emblem and the "08". Everything
+// else that glows (the circuit traces, the dots between words) takes the second colour.
+// Fractions of the banner's size, feathered so the glow hands over without a seam.
+function accentWeight(x, y, width, height) {
+  const u = x / width;
+  const v = y / height;
+  const emblem = Math.hypot((u - 0.5) / 0.092, (v - 0.335) / 0.235);
+  const inEmblem = 1 - smooth(0.92, 1.12, emblem);
+  const dx = Math.max(0.626 - u, u - 0.764, 0);
+  const dy = Math.max(0.5 - v, v - 0.71, 0);
+  const inEight = 1 - smooth(0, 0.012, Math.hypot(dx, dy * (height / width)));
+  return Math.max(inEmblem, inEight);
+}
+const smooth = (a, b, t) => { const k = Math.min(1, Math.max(0, (t - a) / (b - a))); return k * k * (3 - 2 * k); };
+
+export function rehue(image, targetHue, second = null, mainSatScale = 1) {
   const shift = targetHue - SOURCE_HUE;
-  const { pixels } = image;
+  const { width, height, pixels } = image;
   const cache = new Map();
   for (let i = 0; i < pixels.length; i += 4) {
     if (pixels[i + 3] === 0) continue;
     const key = (pixels[i] << 16) | (pixels[i + 1] << 8) | pixels[i + 2];
-    let rgb = cache.get(key);
-    if (!rgb) {
+    let pair = cache.get(key);
+    if (!pair) {
       const hex = `#${key.toString(16).padStart(6, '0')}`;
       const [h, l, s] = hlsFromHex(hex);
       // Neutrals (white text, black outlines, grey fringes) keep their colour exactly.
-      rgb = s < 0.12 ? [pixels[i], pixels[i + 1], pixels[i + 2]]
-        : hexFromHls(((h + shift) % 1 + 1) % 1, l, s).slice(1).match(/../g).map((v) => parseInt(v, 16));
-      cache.set(key, rgb);
+      if (s < 0.12) pair = [[pixels[i], pixels[i + 1], pixels[i + 2]], null];
+      else pair = [
+        recolor(h, l, s, ((h + shift) % 1 + 1) % 1, mainSatScale),
+        second ? recolor(h, l, s, second.hue, second.satScale) : null,
+      ];
+      cache.set(key, pair);
     }
-    [pixels[i], pixels[i + 1], pixels[i + 2]] = rgb;
+    const [main, alt] = pair;
+    if (!alt) { [pixels[i], pixels[i + 1], pixels[i + 2]] = main; continue; }
+    const p = i / 4;
+    const w = accentWeight(p % width, Math.floor(p / width), width, height);
+    for (let c = 0; c < 3; c++) pixels[i + c] = Math.round(main[c] * w + alt[c] * (1 - w));
   }
   return image;
 }
@@ -130,7 +158,7 @@ if (isMain) {
   const { values, positionals } = parseArgs({ allowPositionals: true, options: { date: { type: 'string' } } });
   const [input, output] = positionals;
   if (!input || !output) throw new Error('Usage: recolor-banner.mjs INPUT.png OUTPUT.png [--date YYYY-MM-DD]');
-  const date = values.date ?? new Date().toISOString().slice(0, 10);
+  const date = values.date ?? today();
   const palette = paletteFor(date);
   mkdirSync(dirname(output), { recursive: true });
   if (palette.key === 'signature') {
@@ -138,7 +166,8 @@ if (isMain) {
     console.error(`${output}: ${palette.label} (${date}), original kept`);
   } else {
     const hue = hlsFromHex(palette.dark.accent)[0];
-    writeFileSync(output, encode(rehue(decode(readFileSync(input)), hue)));
+    const second = isTwoTone(palette) ? { hue: hlsFromHex(palette.dark.star)[0], satScale: secondSatScale(palette) } : null;
+    writeFileSync(output, encode(rehue(decode(readFileSync(input)), hue, second, accentSatScale(palette))));
     console.error(`${output}: re-hued to ${palette.label} (${date})`);
   }
 }
