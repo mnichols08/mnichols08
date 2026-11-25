@@ -1,29 +1,38 @@
 <a href="https://mnix.dev" target="_blank">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/banner-dark.png">
-  <img src="./assets/banner-light.png" alt="Mikey Nichols — mnix.dev">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mnichols08/mnichols08/output/banner-dark.png">
+  <img src="https://raw.githubusercontent.com/mnichols08/mnichols08/output/banner-light.png" alt="Mikey Nichols — mnix.dev">
 </picture>
 </a>
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=E3DE13&center=true&vCenter=true&width=600&lines=Full-Stack+Developer;Creator+of+Zubra;HTML-first+Web+Components;Rust+%2B+WebAssembly;React+%26+Node.js">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=827F2B&center=true&vCenter=true&width=600&lines=Full-Stack+Developer;Creator+of+Zubra;HTML-first+Web+Components;Rust+%2B+WebAssembly;React+%26+Node.js" alt="Typing SVG">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mnichols08/mnichols08/output/typing-dark.svg">
+    <img src="https://raw.githubusercontent.com/mnichols08/mnichols08/output/typing-light.svg" alt="Typing SVG" width="600">
   </picture>
 </p>
 <br>
 
 <p align="center">
   <a href="https://mnix.dev">
-    <img src="https://img.shields.io/badge/Portfolio-mnix.dev-E3DE13?style=for-the-badge&logoColor=111111" alt="Portfolio">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mnichols08/mnichols08/output/badge-portfolio-dark.svg">
+      <img src="https://raw.githubusercontent.com/mnichols08/mnichols08/output/badge-portfolio-light.svg" alt="Portfolio">
+    </picture>
   </a>
   <a href="https://journeytocode.io">
-    <img src="https://img.shields.io/badge/Technical_Writing-Journey_to_Code-E3DE13?style=for-the-badge&logoColor=111111" alt="Journey to Code">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mnichols08/mnichols08/output/badge-writing-dark.svg">
+      <img src="https://raw.githubusercontent.com/mnichols08/mnichols08/output/badge-writing-light.svg" alt="Journey to Code">
+    </picture>
   </a>
   <a href="https://linkedin.com/in/mnix-dev">
     <img src="https://img.shields.io/badge/LinkedIn-mnix--dev-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
   </a>
   <a href="https://mnix.dev/file/mnichols-cv.pdf">
-    <img src="https://img.shields.io/badge/Resume-Download-E3DE13?style=for-the-badge&logo=readdotcv&logoColor=111111" alt="Resume">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mnichols08/mnichols08/output/badge-resume-dark.svg">
+      <img src="https://raw.githubusercontent.com/mnichols08/mnichols08/output/badge-resume-light.svg" alt="Resume">
+    </picture>
   </a>
 </p>
 
@@ -33,7 +42,7 @@
 
 I build web applications, from the interface and API to the tests that check how they work together.
 
-I created **[Zubra](https://mnix.dev/projects/zubra)**, an HTML-first compiler for Web Components written in Rust, and I test it on real products: a component library, a 94-game site, a blogging platform's admin studio, and client work at [Potomac Solutions](https://potomac.solutions). I write about what I learn at **[Journey to Code](https://journeytocode.io)**.
+I created **[Zubra](https://mnix.dev/projects/zubra)**, an HTML-first compiler for Web Components written in Rust, and I test it on real products: a component library, a 94-game site, a blogging platform's admin studio, and client work at [Potomac Solutions](https://github.com/potomac-solutions). I write about what I learn at **[Journey to Code](https://github.com/journey-to-code-org)**.
 
 Core: **JavaScript · TypeScript · React · Node.js · Web Components · Rust/WebAssembly**
 
@@ -115,7 +124,7 @@ I write at **[Journey to Code](https://journeytocode.io)** about what I'm buildi
     <img src="https://img.shields.io/badge/WebAssembly-F5F4E6?style=for-the-badge&logo=webassembly&logoColor=654FF0" alt="WebAssembly">
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Axum-111111?style=for-the-badge&logo=rust&logoColor=E3DE13">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mnichols08/mnichols08/output/badge-axum-dark.svg">
     <img src="https://img.shields.io/badge/Axum-F5F4E6?style=for-the-badge&logo=rust&logoColor=111111" alt="Axum">
   </picture>
   <picture>
@@ -135,7 +144,10 @@ I write at **[Journey to Code](https://journeytocode.io)** about what I'm buildi
 ## Frontend
 
 <p>
-  <img src="https://img.shields.io/badge/JavaScript-E3DE13?style=for-the-badge&logo=javascript&logoColor=111111" alt="JavaScript">
+  <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mnichols08/mnichols08/output/badge-javascript-dark.svg">
+      <img src="https://raw.githubusercontent.com/mnichols08/mnichols08/output/badge-javascript-light.svg" alt="JavaScript">
+    </picture>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/React-111111?style=for-the-badge&logo=react&logoColor=61DAFB">
     <img src="https://img.shields.io/badge/React-F5F4E6?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
@@ -145,7 +157,7 @@ I write at **[Journey to Code](https://journeytocode.io)** about what I'm buildi
     <img src="https://img.shields.io/badge/Next.js-F5F4E6?style=for-the-badge&logo=nextdotjs&logoColor=111111" alt="Next.js">
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Web_Components-111111?style=for-the-badge&logo=webcomponents.org&logoColor=E3DE13">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mnichols08/mnichols08/output/badge-webcomponents-dark.svg">
     <img src="https://img.shields.io/badge/Web_Components-F5F4E6?style=for-the-badge&logo=webcomponents.org&logoColor=111111" alt="Web Components">
   </picture>
   <picture>
@@ -170,7 +182,7 @@ I write at **[Journey to Code](https://journeytocode.io)** about what I'm buildi
     <img src="https://img.shields.io/badge/Express-F5F4E6?style=for-the-badge&logo=express&logoColor=111111" alt="Express">
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/REST_APIs-111111?style=for-the-badge&logo=fastapi&logoColor=E3DE13">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mnichols08/mnichols08/output/badge-restapis-dark.svg">
     <img src="https://img.shields.io/badge/REST_APIs-F5F4E6?style=for-the-badge&logo=fastapi&logoColor=111111" alt="REST APIs">
   </picture>
   <picture>
@@ -255,6 +267,21 @@ I write at **[Journey to Code](https://journeytocode.io)** about what I'm buildi
 
 </details>
 
+<details>
+<summary><strong>Tech stack</strong></summary>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/mnichols08/mnichols08/output/tech-stack.svg" alt="Tech stack: languages and technologies declared across my public repositories, with years active" width="900">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/mnichols08/mnichols08/output/tech-stack-map.svg" alt="Tech stack map: technologies grouped by area, linked when declared in the same repositories" width="900">
+</p>
+
+<sub>Declared in each repository's manifests, redrawn daily with a different slight motion. It shows what is used and when, not how well.</sub>
+
+</details>
+
 ---
 
 <details open>
@@ -262,8 +289,8 @@ I write at **[Journey to Code](https://journeytocode.io)** about what I'm buildi
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=mnichols08&hide_border=true&background=111111&stroke=E3DE13&ring=E3DE13&fire=E3DE13&currStreakLabel=E3DE13&currStreakNum=ffffff&sideLabels=ffffff&sideNums=ffffff&dates=b6b211">
-    <img src="https://streak-stats.demolab.com?user=mnichols08&hide_border=true&background=F5F4E6&stroke=111111&ring=827F2B&fire=827F2B&currStreakLabel=111111&currStreakNum=111111&sideLabels=111111&sideNums=111111&dates=827F2B" alt="GitHub Streak" height="165">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mnichols08/mnichols08/output/streak-dark.svg">
+    <img src="https://raw.githubusercontent.com/mnichols08/mnichols08/output/streak-light.svg" alt="GitHub Streak" height="165">
   </picture>
 </p>
 
@@ -280,6 +307,8 @@ I write at **[Journey to Code](https://journeytocode.io)** about what I'm buildi
     <img src="https://raw.githubusercontent.com/mnichols08/mnichols08/output/metrics.isocalendar.svg" alt="Isometric Commit Calendar">
   </picture>
 </p>
+
+<sub>A new sky every day: palette, layout and motion are redrawn at 00:00 UTC from my repositories.</sub>
 
 [![My GitHub constellation](https://raw.githubusercontent.com/mnichols08/mnichols08/output/constellation.svg)](https://github.com/mnichols08/constellation)
 

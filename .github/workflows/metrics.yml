@@ -12,6 +12,12 @@ jobs:
   github-metrics:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+      # Same palette the constellation uses today (scripts/palette.mjs).
+      - name: Pick today's palette
+        id: palette
+        run: node scripts/palette.mjs github-output
+
       # ---------- MAIN METRICS (DARK) ----------
       - name: Generate main metrics (dark)
         uses: lowlighter/metrics@latest
@@ -27,29 +33,7 @@ jobs:
           plugin_languages_recent_categories: markup, programming
           plugin_languages_details: bytes-size, percentage
           plugin_languages_limit: 8
-          extras_css: |
-            :root {
-              --color-canvas-default: #111111 !important;
-              --color-canvas-subtle: #1a1a1a !important;
-              --color-border-default: #3e3c20 !important;
-              --color-border-muted: #2a2a2a !important;
-              --color-fg-default: #ffffff !important;
-              --color-fg-muted: #b6b211 !important;
-              --color-fg-subtle: #827f2b !important;
-              --color-accent-fg: #e3de13 !important;
-              --color-accent-emphasis: #e3de13 !important;
-              --color-success-fg: #e3de13 !important;
-              --color-attention-fg: #e3de13 !important;
-              --color-severe-fg: #e3de13 !important;
-              --color-done-fg: #e3de13 !important;
-              --color-calendar-graph-day-L1-bg: #3e3c20 !important;
-              --color-calendar-graph-day-L2-bg: #827f2b !important;
-              --color-calendar-graph-day-L3-bg: #b6b211 !important;
-              --color-calendar-graph-day-L4-bg: #e3de13 !important;
-              --color-calendar-graph-day-bg: #1a1a1a !important;
-            }
-            h1, h2, h3, h4, a { color: #e3de13 !important; }
-            body { background-color: #111111 !important; }
+          extras_css: ${{ steps.palette.outputs.metrics_dark_css }}
 
       # ---------- MAIN METRICS (LIGHT) ----------
       - name: Generate main metrics (light)
@@ -66,30 +50,7 @@ jobs:
           plugin_languages_recent_categories: markup, programming
           plugin_languages_details: bytes-size, percentage
           plugin_languages_limit: 8
-          extras_css: |
-            :root {
-              --color-canvas-default: #F5F4E6 !important;
-              --color-canvas-subtle: #e8e6cf !important;
-              --color-border-default: #827f2b !important;
-              --color-border-muted: #c9c6a3 !important;
-              --color-fg-default: #111111 !important;
-              --color-fg-muted: #3a3814 !important;
-              --color-fg-subtle: #55521e !important;
-              --color-accent-fg: #111111 !important;
-              --color-accent-emphasis: #111111 !important;
-              --color-success-fg: #111111 !important;
-              --color-attention-fg: #111111 !important;
-              --color-severe-fg: #111111 !important;
-              --color-done-fg: #111111 !important;
-              --color-calendar-graph-day-L1-bg: #d8d6bd !important;
-              --color-calendar-graph-day-L2-bg: #b6b211 !important;
-              --color-calendar-graph-day-L3-bg: #827f2b !important;
-              --color-calendar-graph-day-L4-bg: #4a4720 !important;
-              --color-calendar-graph-day-bg: #ebe9d4 !important;
-            }
-            h1, h2, h3, h4, a { color: #111111 !important; }
-            body { background-color: #F5F4E6 !important; color: #111111 !important; }
-            text, tspan { fill: #111111 !important; }
+          extras_css: ${{ steps.palette.outputs.metrics_light_css }}
 
       # ---------- ISOCALENDAR (DARK) ----------
       - name: Generate isometric commit calendar (dark)
@@ -123,109 +84,13 @@ jobs:
           ref: output
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Recolor embedded graphics to yellow palette
-        run: |
-          python3 << 'PYEOF'
-          import re, colorsys
+      - name: Checkout scripts
+        uses: actions/checkout@v4
+        with:
+          path: source
 
-          hex_re = re.compile(r'#([0-9a-fA-F]{6})\b')
-          TARGET_H, _, _ = colorsys.rgb_to_hls(227/255, 222/255, 19/255)
-
-          # ---- Small "contribution squares" row + header link-blue text:
-          #      exact swaps only, so language-bar brand colors stay untouched.
-          #      Both files share the SAME raw source hexes — only the
-          #      targets differ per theme. ----
-          EXPLICIT_ONLY = {
-              'metrics-dark.svg': {
-                  'ebedf0': '1a1a1a',
-                  '9be9a8': '3e3c20',
-                  '40c463': '827f2b',
-                  '30a14e': 'b6b211',
-                  '216e39': 'e3de13',
-                  '0969da': 'e3de13',  # name heading link-blue
-                  '0366d6': 'e3de13',
-                  '0a3069': 'e3de13',
-              },
-              'metrics.svg': {
-                  'ebedf0': 'ebe9d4',
-                  '9be9a8': 'f7f5b5',
-                  '40c463': 'efeb6a',
-                  '30a14e': 'e3de13',
-                  '216e39': '8b8500',
-                  '0969da': '111111',  # name heading link-blue -> black
-                  '0366d6': '111111',
-                  '0a3069': '111111',
-              },
-          }
-
-          def classify_and_map(hexcode, theme):
-              r = int(hexcode[0:2], 16) / 255
-              g = int(hexcode[2:4], 16) / 255
-              b = int(hexcode[4:6], 16) / 255
-              h, l, s = colorsys.rgb_to_hls(r, g, b)
-
-              if s < 0.03:
-                  return None
-
-              is_bright_accent = (l >= 0.45 and s >= 0.55)
-
-              if theme == 'light':
-                  if is_bright_accent:
-                      return '111111'
-                  nr, ng, nb = colorsys.hls_to_rgb(TARGET_H, l, s)
-              else:
-                  if is_bright_accent:
-                      return 'e3de13'
-                  new_l = 1 - l
-                  new_s = min(1.0, s * 1.15)
-                  nr, ng, nb = colorsys.hls_to_rgb(TARGET_H, new_l, new_s)
-
-              return '{:02x}{:02x}{:02x}'.format(round(nr*255), round(ng*255), round(nb*255))
-
-          ISOCAL = {
-              'metrics.isocalendar-dark.svg': ('dark', '1a1a1a'),
-              'metrics.isocalendar.svg': ('light', 'f5f4e6'),
-          }
-
-          for fname, (theme, bg_target) in ISOCAL.items():
-              try:
-                  with open(fname, 'r', encoding='utf-8') as f:
-                      content = f.read()
-              except FileNotFoundError:
-                  print(f"skip missing {fname}")
-                  continue
-
-              content = re.sub(r'(?i)#f0f0eb', '#' + bg_target, content)
-
-              colors = set(m.group(1).lower() for m in hex_re.finditer(content))
-              mapping = {}
-              for hexcode in colors:
-                  new_hex = classify_and_map(hexcode, theme)
-                  if new_hex and new_hex != hexcode:
-                      mapping[hexcode] = new_hex
-
-              for old, new in mapping.items():
-                  content = re.sub(r'(?i)#' + old, '#' + new, content)
-
-              with open(fname, 'w', encoding='utf-8') as f:
-                  f.write(content)
-              print(f"{fname}: bg->{bg_target}, {len(mapping)} colors remapped")
-
-          for fname, explicit_map in EXPLICIT_ONLY.items():
-              try:
-                  with open(fname, 'r', encoding='utf-8') as f:
-                      content = f.read()
-              except FileNotFoundError:
-                  print(f"skip missing {fname}")
-                  continue
-
-              for old, new in explicit_map.items():
-                  content = re.sub(r'(?i)#' + old, '#' + new, content)
-
-              with open(fname, 'w', encoding='utf-8') as f:
-                  f.write(content)
-              print(f"{fname}: {len(explicit_map)} explicit swaps")
-          PYEOF
+      - name: Recolor embedded graphics to today's palette
+        run: node source/scripts/palette.mjs recolor .
 
       - name: Commit and push recolored SVGs
         run: |
@@ -248,6 +113,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Recolor embedded graphics to yellow palette"
+            git commit -m "Recolor embedded graphics to today's palette"
             git push origin output
           fi
