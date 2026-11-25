@@ -41,7 +41,7 @@ export function artFor(date) {
       url: `https://streak-stats.demolab.com?user=mnichols08&hide_border=true&background=00000000&stroke=${hex(c.rule)}&ring=${hex(c.ring)}&fire=${hex(c.ring)}&currStreakLabel=${hex(mode === 'dark' ? c.accent : c.text)}&currStreakNum=${hex(c.text)}&sideLabels=${hex(c.text)}&sideNums=${hex(c.text)}&dates=${hex(c.soft)}`,
     });
 
-    // Badges whose message was the base yellow.
+    // Badges whose message was the base yellow. (JavaScript is not one of them: it stays JS yellow.)
     const badge = (name, label, extra = '') => ({
       file: `badge-${name}-${mode}.svg`,
       url: `https://img.shields.io/badge/${label}-${hex(c.accent)}?style=for-the-badge${extra}&logoColor=${hex(c.onAccent)}`,
@@ -49,7 +49,6 @@ export function artFor(date) {
     items.push(badge('portfolio', 'Portfolio-mnix.dev'));
     items.push(badge('writing', 'Technical_Writing-Journey_to_Code'));
     items.push(badge('resume', 'Resume-Download', '&logo=readdotcv'));
-    items.push(badge('javascript', 'JavaScript', '&logo=javascript'));
   }
 
   // Dark-mode badges whose logo was the base yellow (light mode keeps its dark logo).

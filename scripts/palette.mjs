@@ -48,7 +48,7 @@ export function weighted(random, table) {
 export const palettes = {
   signature: {
     label: 'Signature',
-    weight: 12,
+    weight: 20,
     light: { background: '#fafaf3', foreground: '#202516', accent: '#595600', line: '#838d66', star: '#8b8500' },
     dark: { background: '#111111', foreground: '#f3f3f4', accent: '#e3de13', line: '#555a38', star: '#e3de13' },
   },

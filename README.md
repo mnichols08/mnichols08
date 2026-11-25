@@ -144,10 +144,7 @@ I write at **[Journey to Code](https://journeytocode.io)** about what I'm buildi
 ## Frontend
 
 <p>
-  <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mnichols08/mnichols08/output/badge-javascript-dark.svg">
-      <img src="https://raw.githubusercontent.com/mnichols08/mnichols08/output/badge-javascript-light.svg" alt="JavaScript">
-    </picture>
+  <img src="https://img.shields.io/badge/JavaScript-E3DE13?style=for-the-badge&logo=javascript&logoColor=111111" alt="JavaScript">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/React-111111?style=for-the-badge&logo=react&logoColor=61DAFB">
     <img src="https://img.shields.io/badge/React-F5F4E6?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
