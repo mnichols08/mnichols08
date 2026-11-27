@@ -305,7 +305,7 @@ I write at **[Journey to Code](https://journeytocode.io)** about what I'm buildi
   </picture>
 </p>
 
-<sub>A new sky every day: palette, layout and motion are redrawn at 00:00 UTC from my repositories.</sub>
+<sub>A new sky every day: palette, layout and motion are redrawn from my repositories.</sub>
 
 [![My GitHub constellation](https://raw.githubusercontent.com/mnichols08/mnichols08/output/constellation.svg)](https://github.com/mnichols08/constellation)
 
