@@ -42,7 +42,7 @@
 
 I build web applications, from the interface and API to the tests that check how they work together.
 
-I created **[Zubra](https://mnix.dev/projects/zubra)**, an HTML-first compiler for Web Components written in Rust, and I test it on real products: a component library, a 94-game site, a blogging platform's admin studio, and client work at [Potomac Solutions](https://github.com/potomac-solutions). I write about what I learn at **[Journey to Code](https://github.com/journey-to-code-org)**.
+I created **[Zubra](https://mnix.dev/projects/zubra)**, an HTML-first compiler for Web Components written in Rust, and I test it on real products: a component library, a 96-game site, a blogging platform's admin studio, and client work at [Potomac Solutions](https://github.com/potomac-solutions). I write about what I learn at **[Journey to Code](https://github.com/journey-to-code-org)**.
 
 Core: **JavaScript · TypeScript · React · Node.js · Web Components · Rust/WebAssembly**
 
